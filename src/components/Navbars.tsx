@@ -1,31 +1,29 @@
-import React from "react";
 import {
-  Navbar,
-  MobileNav,
-  Typography,
-  Button,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  Avatar,
-  Card,
-  IconButton,
-} from "@material-tailwind/react";
-import {
-  CubeTransparentIcon,
-  UserCircleIcon,
-  CodeBracketSquareIcon,
-  Square3Stack3DIcon,
+  Bars2Icon,
   ChevronDownIcon,
   Cog6ToothIcon,
   InboxArrowDownIcon,
   LifebuoyIcon,
   PowerIcon,
   RocketLaunchIcon,
-  Bars2Icon,
+  Square3Stack3DIcon,
+  UserCircleIcon,
 } from "@heroicons/react/24/solid";
- 
+import {
+  Avatar,
+  Button,
+  Card,
+  IconButton,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  MobileNav,
+  Navbar,
+  Typography,
+} from "@material-tailwind/react";
+import React from "react";
+
 // profile menu component
 const profileMenuItems = [
   {
@@ -49,12 +47,12 @@ const profileMenuItems = [
     icon: PowerIcon,
   },
 ];
- 
+
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
+
   const closeMenu = () => setIsMenuOpen(false);
- 
+
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
@@ -110,7 +108,7 @@ function ProfileMenu() {
     </Menu>
   );
 }
- 
+
 // nav list menu
 const navListMenuItems = [
   {
@@ -129,10 +127,10 @@ const navListMenuItems = [
       "A complete set of UI Elements for building faster websites in less time.",
   },
 ];
- 
+
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
+
   const renderItems = navListMenuItems.map(({ title, description }) => (
     <a href="#" key={title}>
       <MenuItem>
@@ -145,14 +143,17 @@ function NavListMenu() {
       </MenuItem>
     </a>
   ));
- 
+
   return (
     <React.Fragment>
       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
         <MenuHandler>
           <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex">
-              <MenuItem children className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
+              <MenuItem
+                children
+                className="h-[18px] w-[18px] text-blue-gray-500"
+              />{" "}
               Pages{" "}
               <ChevronDownIcon
                 strokeWidth={2}
@@ -187,7 +188,7 @@ function NavListMenu() {
     </React.Fragment>
   );
 }
- 
+
 // nav list component
 const navListItems = [
   {
@@ -200,46 +201,46 @@ const navListItems = [
     label: "Docs",
   },
 ];
- 
+
 function NavList() {
   return (
     <>
-    <div className=" ">
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-      <NavListMenu />
-      {navListItems.map(({ label }, key) => (
-        <Typography
-          key={label}
-          as="a"
-          href="#"
-          variant="small"
-          color="gray"
-          className="font-medium text-blue-gray-500"
-        >
-          <MenuItem className="flex items-center gap-2">
-            {React.createElement(label, { className: "" })}{" "}
-            <span className="text-gray-900"> {label}</span>
-          </MenuItem>
-        </Typography>
-      ))}
-    </ul>
-    </div>
+      <div className=" ">
+        <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
+          <NavListMenu />
+          {navListItems.map(({ label }, key) => (
+            <Typography
+              key={label}
+              as="a"
+              href="#"
+              variant="small"
+              color="gray"
+              className="font-medium text-blue-gray-500"
+            >
+              <MenuItem className="flex items-center gap-2">
+                {React.createElement(label, { className: "" })}{" "}
+                <span className="text-gray-900"> {label}</span>
+              </MenuItem>
+            </Typography>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
- 
+
 export function ComplexNavbar() {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
- 
+
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
- 
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false),
+      () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
   }, []);
- 
+
   return (
     <Navbar className="">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
@@ -262,7 +263,7 @@ export function ComplexNavbar() {
         >
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
- 
+
         <Button size="sm" variant="text">
           <span>Log In</span>
         </Button>
