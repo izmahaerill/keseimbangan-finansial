@@ -1,6 +1,9 @@
+import { LOGO } from "@/constatants";
 import img from "@/img/Frame 112.png";
+import { Icon } from "@iconify/react";
 import { List, Typography } from "@material-tailwind/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,9 +13,7 @@ export default function Footer() {
       <footer>
         <div className="flex justify-around items-center mb-16">
           <div>
-            <Image src={img} width={163} height={43} alt="">
-              {}
-            </Image>
+            <Image src={img} width={163} height={43} alt="" />
           </div>
           <div>
             <List className="flex flex-row justify-between items-center gap-10">
@@ -22,16 +23,15 @@ export default function Footer() {
               <Typography>Kalkulator</Typography>
             </List>
           </div>
-          <div>Lorem ipsum dolor sit amet.</div>
-          {/* <div>
-            {LOGO.map(({ icon, url }, index) => (
-              <Link href={url} key={icon}>
-                <Button>
+          <div className="flex gap-6">
+            {LOGO.map(({ icon, url }) => (
+              <div key={icon}>
+                <Link href={url} className="text-4xl">
                   <Icon icon={icon} />
-                </Button>
-              </Link>
+                </Link>
+              </div>
             ))}
-          </div> */}
+          </div>
         </div>
         <div className="flex justify-between mx-10 mb-10">
           <Typography variant="paragraph">

@@ -13,7 +13,7 @@ export default function Quotes() {
         Quotes Of The Day
       </Typography>
       <div className="flex gap-5 justify-center">
-        {QUOTES.map(({ tittle, sub }, index) => (
+        {QUOTES.map(({ tittle, sub }) => (
           <div key={tittle} className="flex justify-center text-center mb-10">
             <Card className="mt-5 w-64 bg-red-100">
               <CardBody>

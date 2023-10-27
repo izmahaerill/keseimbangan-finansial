@@ -3,6 +3,7 @@ import {
   type Artikel,
   type Icons,
   type Quotes,
+  type Remainder,
 } from "@/interfaces";
 
 export const ARTIKEL: Artikel[] = [
@@ -74,8 +75,27 @@ export const VIDEDUCATION: VidEducation[] = [
 ];
 
 export const LOGO: Icons[] = [
-  { icon: "ic:baseline-facebook", url: "/" },
-  { icon: "icon-park-solid:google", url: "/" },
-  { icon: "ri:instagram-fill", url: "/" },
-  { icon: "ic:baseline-apple", url: "/" },
+  {
+    icon: "ic:baseline-facebook",
+    url: "https://web.facebook.com/?_rdc=1&_rdr",
+  },
+  { icon: "ri:instagram-fill", url: "https://www.instagram.com/?hl=en" },
+  { icon: "ic:baseline-apple", url: "https://www.apple.com/" },
+];
+
+export const REMAINDER: Remainder[] = [
+  {
+    id: 1,
+    tittle: "Remainder",
+    subTittle:
+      "Pengingat tagihan dan kebutuhan adalah pesan yang digunakan untuk mengingatkan tentang pembayaran tagihan dan kebutuhan penting yang harus dipenuhi. ",
+    LihatDetail: [
+      {
+        id: 2,
+        tittle: "Detail Remainder",
+        subTittle:
+          "Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga.",
+      },
+    ],
+  },
 ];

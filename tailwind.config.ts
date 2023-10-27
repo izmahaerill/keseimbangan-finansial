@@ -12,8 +12,8 @@ const config: Config = withMT({
   theme: {
     extend: {},
     colors: {
-      primary: "text-purple-700",
-      secondary: "bg-purple-700",
+      primary: "#9333ea",
+      secondary: "#eab308",
     },
   },
   plugins: [],
