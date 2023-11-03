@@ -12,8 +12,9 @@ const config: Config = withMT({
   theme: {
     extend: {},
     colors: {
-      primary: "#9333ea",
-      secondary: "#eab308",
+      primary: "#A900F0",
+      secondary: "#FFCC00",
+      base: "#161616",
     },
   },
   plugins: [],

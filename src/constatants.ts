@@ -5,7 +5,6 @@ import {
   type Quotes,
   type Remainder,
 } from "@/interfaces";
-
 export const ARTIKEL: Artikel[] = [
   {
     title: "Mengelola Utang dengan Bijak: Strategi Pelunasan dan Konsolidasi",

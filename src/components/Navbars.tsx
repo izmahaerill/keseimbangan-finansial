@@ -1,277 +1,88 @@
-import {
-  Bars2Icon,
-  ChevronDownIcon,
-  Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
-  PowerIcon,
-  RocketLaunchIcon,
-  Square3Stack3DIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/solid";
-import {
-  Avatar,
-  Button,
-  Card,
-  IconButton,
-  Menu,
-  MenuHandler,
-  MenuItem,
-  MenuList,
-  MobileNav,
-  Navbar,
-  Typography,
-} from "@material-tailwind/react";
-import React from "react";
+import img from "@/img/Frame 112.png";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { Button, List, Typography } from "@material-tailwind/react";
+import Image from "next/image";
+import Link from "next/link";
 
-// profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
-
-function ProfileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const closeMenu = () => setIsMenuOpen(false);
+export default function Navbars() {
+  // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
-      <MenuHandler>
-        <Button
-          variant="text"
-          color="blue-gray"
-          className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
-        >
-          <Avatar
-            variant="circular"
-            size="sm"
-            alt="tania andrew"
-            className="border border-gray-900 p-0.5"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-          />
-          <ChevronDownIcon
-            strokeWidth={2.5}
-            className={`h-3 w-3 transition-transform ${
-              isMenuOpen ? "rotate-180" : ""
-            }`}
-          />
-        </Button>
-      </MenuHandler>
-      <MenuList className="p-1">
-        {profileMenuItems.map(({ label, icon }, key) => {
-          const isLastItem = key === profileMenuItems.length - 1;
-          return (
-            <MenuItem
-              key={label}
-              onClick={closeMenu}
-              className={`flex items-center gap-2 rounded ${
-                isLastItem
-                  ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                  : ""
-              }`}
-            >
-              {React.createElement(icon, {
-                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
-                strokeWidth: 2,
-              })}
-              <Typography
-                as="span"
-                variant="small"
-                className="font-normal"
-                color={isLastItem ? "red" : "inherit"}
+    <div className="mb-10 shadow-sm">
+      <nav>
+        <div className="flex justify-between px-[3.7rem] items-center py-[1rem]">
+          <Link href={"/"}>
+            <Image src={img} width={163} height={43} alt="/" />
+          </Link>
+          <div>
+            <List className="flex flex-row justify-between items-center gap-2">
+              <Link
+                href={""}
+                className="hover:bg-gray-100 relative block px-2 py-1 rounded-lg transition ease-in-out duration-700"
               >
-                {label}
-              </Typography>
-            </MenuItem>
-          );
-        })}
-      </MenuList>
-    </Menu>
-  );
-}
-
-// nav list menu
-const navListMenuItems = [
-  {
-    title: "@material-tailwind/html",
-    description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-  },
-  {
-    title: "@material-tailwind/react",
-    description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
-  },
-  {
-    title: "Material Tailwind PRO",
-    description:
-      "A complete set of UI Elements for building faster websites in less time.",
-  },
-];
-
-function NavListMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const renderItems = navListMenuItems.map(({ title, description }) => (
-    <a href="#" key={title}>
-      <MenuItem>
-        <Typography variant="h6" color="blue-gray" className="mb-1">
-          {title}
-        </Typography>
-        <Typography variant="small" color="gray" className="font-normal">
-          {description}
-        </Typography>
-      </MenuItem>
-    </a>
-  ));
-
-  return (
-    <React.Fragment>
-      <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
-        <MenuHandler>
-          <Typography as="a" href="#" variant="small" className="font-normal">
-            <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex">
-              <MenuItem
-                children
-                className="h-[18px] w-[18px] text-blue-gray-500"
-              />{" "}
-              Pages{" "}
-              <ChevronDownIcon
-                strokeWidth={2}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-            </MenuItem>
-          </Typography>
-        </MenuHandler>
-        <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-          <Card
-            color="blue"
-            shadow={false}
-            variant="gradient"
-            className="col-span-3 grid h-full w-full place-items-center rounded-md"
-          >
-            <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-          </Card>
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {renderItems}
-          </ul>
-        </MenuList>
-      </Menu>
-      <MenuItem className="flex items-center gap-2 font-medium text-blue-gray-900 lg:hidden">
-        <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
-        Pages{" "}
-      </MenuItem>
-      <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-        {renderItems}
-      </ul>
-    </React.Fragment>
-  );
-}
-
-// nav list component
-const navListItems = [
-  {
-    label: "Account",
-  },
-  {
-    label: "Blocks",
-  },
-  {
-    label: "Docs",
-  },
-];
-
-function NavList() {
-  return (
-    <>
-      <div className=" ">
-        <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-          <NavListMenu />
-          {navListItems.map(({ label }, key) => (
-            <Typography
-              key={label}
-              as="a"
-              href="#"
-              variant="small"
-              color="gray"
-              className="font-medium text-blue-gray-500"
-            >
-              <MenuItem className="flex items-center gap-2">
-                {React.createElement(label, { className: "" })}{" "}
-                <span className="text-gray-900"> {label}</span>
-              </MenuItem>
-            </Typography>
-          ))}
-        </ul>
-      </div>
-    </>
-  );
-}
-
-export function ComplexNavbar() {
-  const [isNavOpen, setIsNavOpen] = React.useState(false);
-
-  const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
-
-  React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false)
-    );
-  }, []);
-
-  return (
-    <Navbar className="">
-      <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
-        >
-          My Finance
-        </Typography>
-        <div className="hidden lg:block">
-          <NavList />
+                <Typography className="">Menegemen Keuangan</Typography>
+              </Link>
+              <Link
+                href={""}
+                className="hover:bg-gray-100 relative block px-2 py-1 rounded-lg transition ease-in-out duration-700"
+              >
+                <Typography>Pengingat</Typography>
+              </Link>
+              <Link
+                href={""}
+                className="hover:bg-gray-100 relative block px-2 py-1 rounded-lg transition ease-in-out duration-700"
+              >
+                <Typography className="flex items-center gap-2">
+                  Edukasi
+                  <ChevronDownIcon
+                    className="w-4 h-4"
+                    strokeWidth={0}
+                    // className={`hidden h-3 w-3 transition-transform lg:block ${
+                    //   isMenuOpen ? "rotate-180" : ""
+                    // }`}
+                  />
+                </Typography>
+              </Link>
+              <Link
+                href={""}
+                className="hover:bg-gray-200 relative block px-2 py-1 rounded-lg transition ease-in-out duration-700"
+              >
+                <Typography className="flex items-center gap-2">
+                  Kalkulator
+                  <ChevronDownIcon
+                    className="w-4 h-4"
+                    strokeWidth={0}
+                    // className={`hidden h-3 w-3 transition-transform lg:block ${
+                    //   isMenuOpen ? "rotate-180" : ""
+                    // }`}
+                  />
+                </Typography>
+              </Link>
+            </List>
+          </div>
+          <div className="flex gap-3 ">
+            <Link href={""}>
+              <Button
+                className="bg-secondary text-black"
+                size="sm"
+                variant="filled"
+              >
+                Sign In
+              </Button>
+            </Link>
+            <Link href={""} className="">
+              <Button
+                variant="outlined"
+                size="sm"
+                className="text-black"
+                color="yellow"
+              >
+                Sign Up
+              </Button>
+            </Link>
+          </div>
         </div>
-        <IconButton
-          size="sm"
-          color="blue-gray"
-          variant="text"
-          onClick={toggleIsNavOpen}
-          className="ml-auto mr-2 lg:hidden"
-        >
-          <Bars2Icon className="h-6 w-6" />
-        </IconButton>
-
-        <Button size="sm" variant="text">
-          <span>Log In</span>
-        </Button>
-        <ProfileMenu />
-      </div>
-      <MobileNav open={isNavOpen} className="overflow-scroll">
-        <NavList />
-      </MobileNav>
-    </Navbar>
+      </nav>
+    </div>
   );
 }

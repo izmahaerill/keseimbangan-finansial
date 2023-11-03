@@ -10,8 +10,8 @@ export default function Footer() {
 
   return (
     <>
-      <footer>
-        <div className="flex justify-around items-center mb-16">
+      <footer className="relative mt-[100px]">
+        <div className="flex justify-around items-center">
           <div>
             <Image src={img} width={163} height={43} alt="" />
           </div>

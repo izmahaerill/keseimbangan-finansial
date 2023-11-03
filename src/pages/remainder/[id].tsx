@@ -1,4 +1,3 @@
-import HeroImage from "@/components/HeroImage";
 import { REMAINDER } from "@/constatants";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -19,9 +18,7 @@ export default function RemainderId() {
 
   return (
     <>
-      <div>
-        <HeroImage />
-      </div>
+      <div>{/* <HeroImage /> */}</div>
     </>
   );
 }
