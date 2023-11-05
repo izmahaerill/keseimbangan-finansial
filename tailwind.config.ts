@@ -10,11 +10,20 @@ const config: Config = withMT({
     "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+    },
     extend: {},
     colors: {
       primary: "#A900F0",
       secondary: "#FFCC00",
-      base: "#161616",
+      anjirr: "#161616",
+    },
+    fontFamily: {
+      lato: ["Lato", "sans-serif"],
     },
   },
   plugins: [],

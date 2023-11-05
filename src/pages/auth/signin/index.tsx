@@ -1,3 +1,6 @@
+import Elips from "@/img/Ellipse 859.png";
+import img from "@/img/Illustration.png";
+import { Icon } from "@iconify/react";
 import {
   Button,
   Card,
@@ -6,27 +9,50 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import Image from "next/image";
+
 import Link from "next/link";
 
 export default function Login() {
   return (
     <div className="flex items-center justify-center h-screen gap-10">
-      <div className="bg-primary p-10 rounded-md">
-        <Image
-          className=""
-          src="https://img.freepik.com/free-vector/working-characters-flat-design-web-banner_1308-128001.jpg?w=740&t=st=1697735071~exp=1697735671~hmac=3d911031ca40a89d087daaf041e39006431d5f6b5d8432e64212edf2db021779"
-          width={400}
-          height={400}
-          priority
-          alt="Picture of the author"
-        />
+      <div className="bg-primary py-10 pl-10 -pr-10 rounded-md ">
+        <div className="mb-10">
+          <Typography
+            variant="h3"
+            className="font-semibold text-white w-[30rem] mb-2"
+          >
+            The simplest way to manage your money
+          </Typography>
+          <Typography className="text-white">
+            Enter your email to access your account
+          </Typography>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <Image
+            className=""
+            src={img}
+            width={300}
+            height={50}
+            priority
+            alt="Picture of the author"
+          />
+          <Image src={Elips} alt="" width={300} height={0} className="-mt-8" />
+        </div>
       </div>
       <Card color="transparent" shadow={false}>
-        <Typography variant="h4" color="blue-gray">
-          Sign In
+        <Typography
+          variant="h1"
+          color="blue-gray"
+          className="flex justify-center font-bold drop-shadow-lg shadow-black text-anjirr"
+        >
+          Welcome Back!
         </Typography>
-        <Typography color="gray" className="mt-1 font-normal">
-          Nice to meet you! Enter your details to login.
+        <Typography
+          variant="h4"
+          color="gray"
+          className="flex justify-center mt-1 font-normal text-anjirr"
+        >
+          Please Enter your details.
         </Typography>
         <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
           <div className="mb-1 flex flex-col gap-6">
@@ -56,27 +82,39 @@ export default function Login() {
               }}
             />
           </div>
-          <Checkbox
-            crossOrigin={""}
-            label={
-              <Typography
-                variant="small"
-                color="gray"
-                className="flex items-center font-normal"
-              >
-                I agree the
-                <Link
-                  href="#"
-                  className="font-medium transition-colors hover:text-gray-900"
+          <div className="flex justify-between items-center">
+            <Checkbox
+              crossOrigin={""}
+              label={
+                <Typography
+                  variant="small"
+                  className="flex items-center font-semibold text-anjirr"
                 >
-                  &nbsp;Terms and Conditions
-                </Link>
+                  Remember me
+                </Typography>
+              }
+              containerProps={{ className: "-ml-2.5" }}
+            />
+            <Link href={""}>
+              <Typography variant="small" color="gray">
+                Forgot Password?
               </Typography>
-            }
-            containerProps={{ className: "-ml-2.5" }}
-          />
-          <Button className="mt-6 bg-secondary" fullWidth>
+            </Link>
+          </div>
+          <Button className="mt-4 mb-4 text-sm bg-secondary" fullWidth>
             sign in
+          </Button>
+          <div className="flex flex-cols-3 gap-2 justify-center items-center">
+            <div className="border border-b-1 w-full border-black"></div>
+            <Typography>Or</Typography>
+            <div className="border border-b-1 w-full border-black"></div>
+          </div>
+          <Button
+            className="mt-4 text-sm bg-secondary flex items-center justify-center gap-5"
+            fullWidth
+          >
+            <Icon className="text-xl p-0" icon="flat-color-icons:google" /> Log
+            in With Google
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             don't have an account?{" "}

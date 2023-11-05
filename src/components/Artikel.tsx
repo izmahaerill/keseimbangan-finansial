@@ -22,7 +22,7 @@ export default function Artikel() {
           {ARTIKEL.map(({ title, subTittle, keu, manag, image }, index) => (
             <div
               key={title}
-              className={`flex justify-center gap-5 mb-20 ${
+              className={`flex justify-center gap-1 mb-20 ${
                 index % 2 === 1 && "flex-row-reverse"
               }`}
             >
