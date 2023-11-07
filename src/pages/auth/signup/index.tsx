@@ -9,11 +9,11 @@ export default function SignUp() {
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-28">
       <div className="bg-primary p-20 rounded-lg w-1/2">
-        <Typography variant="h3" color="white">
+        <Typography variant="h3" color="white" className="mb-2">
           The simplest way to manage your money
         </Typography>
         <Typography variant="paragraph" color="white">
-          Enter your email to access your account
+          Enter your detail to have your account
         </Typography>
         <div className="flex flex-col items-center my-16">
           <Image
@@ -33,7 +33,9 @@ export default function SignUp() {
       </div>
       <div className="w-1/2 flex flex-col items-center gap-5 px-10">
         <div className="text-center">
-          <Typography variant="h2">Create Account</Typography>
+          <Typography variant="h2" className="mb-5">
+            Create Account
+          </Typography>
           <Typography variant="h5">Please enter your detail</Typography>
         </div>
         <form className="flex flex-col gap-5 w-full">
@@ -43,7 +45,7 @@ export default function SignUp() {
               type="text"
               size="lg"
               placeholder="Username"
-              className="focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -62,7 +64,7 @@ export default function SignUp() {
               type="email"
               size="lg"
               placeholder="Email"
-              className="focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -81,7 +83,7 @@ export default function SignUp() {
               type="password"
               size="lg"
               placeholder="Password"
-              className="focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -93,6 +95,9 @@ export default function SignUp() {
               }
               crossOrigin={undefined}
             />
+            <Typography variant="small" className="font-normal text-right">
+              Must be at least 8 characters
+            </Typography>
           </div>
           <div>
             <Typography variant="h6">Confirm Password*</Typography>
@@ -100,7 +105,7 @@ export default function SignUp() {
               type="password"
               size="lg"
               placeholder="Confirm Password"
-              className="focus:!border-t-gray-900"
+              className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -112,15 +117,28 @@ export default function SignUp() {
               }
               crossOrigin={undefined}
             />
+            <Typography variant="small" className="font-normal text-right">
+              Must be at least 8 characters
+            </Typography>
           </div>
-          <Button type="submit" size="lg" fullWidth className="bg-primary">
+          <Button
+            type="submit"
+            size="lg"
+            fullWidth
+            className="bg-primary normal-case"
+          >
             Create Account
           </Button>
         </form>
+        <div className="flex gap-3 items-center w-full">
+          <span className="h-0.5 bg-black w-full" />
+          <Typography variant="h6">or</Typography>
+          <span className="h-0.5 bg-black w-full" />
+        </div>
         <Button
           size="lg"
           fullWidth
-          className="bg-secondary flex items-center gap-2 justify-center text-black"
+          className="bg-secondary flex items-center gap-2 justify-center text-black normal-case"
         >
           <Icon icon="logos:google-icon" className="text-xl" />
           Log in With Google
