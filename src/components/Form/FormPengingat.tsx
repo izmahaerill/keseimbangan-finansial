@@ -130,7 +130,7 @@ export default function FormSection() {
                   alt=""
                   width={445}
                   height={179}
-                ></Image>
+                />
               </div>
             </div>
           </Card>

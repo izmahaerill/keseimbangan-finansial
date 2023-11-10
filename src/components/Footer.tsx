@@ -33,7 +33,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="flex justify-between mx-10 mb-10">
+        <div className="flex justify-between mx-10 mb-10 mt-10">
           <Typography variant="paragraph">
             &copy; {currentYear} My Finance. All Rights Reserved.
           </Typography>

@@ -172,9 +172,9 @@ function NavList() {
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           Manajemen Keuangan
         </ListItem>
-        <ListItem className="flex items-center gap-2 py-2 pr-4">
+        {/* <ListItem className="flex items-center gap-2 py-2 pr-4">
           Pengingat
-        </ListItem>
+        </ListItem>  */}
       </Typography>
       <NavListMenu />
       <Typography
