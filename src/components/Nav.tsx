@@ -203,7 +203,7 @@ export default function NavbarWithMegaMenu() {
   }, []);
 
   return (
-    <Navbar className="mx-auto w-full px-4 py-4 rounded-none mb-14">
+    <Navbar className="mx-auto w-full px-4 py-4 rounded-none mb-14 ">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Image src={img} alt="" height={0} width={0}></Image>
         <div className="hidden lg:block">

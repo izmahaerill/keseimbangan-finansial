@@ -14,7 +14,7 @@ import {
 
 export default function SideBar() {
   return (
-    <Card className="h-96 w-full max-w-[20rem] p-4 mt-10">
+    <Card className="h-96 w-full max-w-[18rem]">
       <div className="mb-2 p-4">
         <Typography variant="h3" color="blue-gray">
           Kategori

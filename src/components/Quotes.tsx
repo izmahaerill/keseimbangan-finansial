@@ -9,10 +9,10 @@ import {
 export default function Quotes() {
   return (
     <>
-      <Typography variant="h3" className="flex justify-center mb-5">
+      <Typography variant="h3" className="flex justify-center mb-10 mt-16">
         Quotes Of The Day
       </Typography>
-      <div className="flex gap-5 justify-center">
+      <div className="flex gap-8 justify-center h-[346px]">
         {QUOTES.map(({ tittle, sub }) => (
           <div key={tittle} className="flex justify-center text-center mb-10">
             <Card className="mt-5 w-64 bg-red-100">

@@ -8,7 +8,7 @@ export default function Edukasi() {
   return (
     <div>
       <Nav />
-      <div>
+      <div className="ml-[2.5rem]">
         <Typography variant="h3">
           Ingin menambah pengetahuan tentang keuangan?
         </Typography>
@@ -17,11 +17,15 @@ export default function Edukasi() {
           lebih baik
         </Typography>
       </div>
-      <div className="flex">
-        <aside>
+      <div className="flex justify-center items-center mt-20">
+        <aside className="-mt-[60rem]">
           <SideBar />
         </aside>
-        <VideoSec />
+        <div className="flex flex-col gap-8">
+          <VideoSec />
+          <VideoSec />
+          <VideoSec />
+        </div>
       </div>
       <footer>
         <Footer />

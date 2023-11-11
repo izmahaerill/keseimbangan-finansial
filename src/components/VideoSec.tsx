@@ -10,28 +10,28 @@ import {
 export default function VideoSec() {
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-8">
         {VIDEDUCATION.map(({ image, tittle, manag, keu, subFooter }, index) => (
           <div key={tittle}>
-            <Card className="mt-6 w-96">
+            <Card className="mt-6 w-80">
               <CardHeader color="blue-gray" className="relative h-56">
-                <img src={image} alt="card-image" />
+                <img src={image} alt="card-image" className="w-fitt" />
               </CardHeader>
               <CardBody>
-                <Typography variant="h5" color="blue-gray" className="mb-2">
+                <Typography variant="h6" color="blue-gray" className="mb-2">
                   {tittle}
                 </Typography>
               </CardBody>
               <div className="flex gap-2 mb-5 ml-7">
                 <Typography
                   variant="paragraph"
-                  className="text-purple-900 bg-purple-100 px-6 py-1 text-lg rounded-full"
+                  className="text-purple-900 bg-purple-100 px-6 py-1 text-sm rounded-full"
                 >
                   {manag}
                 </Typography>
                 <Typography
                   variant="paragraph"
-                  className="text-yellow-900 bg-yellow-200 px-6 py-1 text-lg rounded-full"
+                  className="text-yellow-900 bg-yellow-200 px-6 py-1 text-sm rounded-full"
                 >
                   {keu}
                 </Typography>

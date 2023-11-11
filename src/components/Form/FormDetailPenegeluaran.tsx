@@ -1,5 +1,6 @@
 import Tittle from "@/components/Tittle";
-import img from "@/img/8351256_3885981 1.png";
+import Elips from "@/img/Ellipse 859.png";
+import img from "@/img/Group.png";
 import {
   Button,
   Card,
@@ -10,39 +11,21 @@ import {
 } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";
-import HeroImage from "../HeroImage";
 
 export default function FormDetailPenegeluaran() {
   return (
     <div>
       <div>
-        <HeroImage />
-      </div>
-      <div>
         <div>
-          <div className="flex flex-col justify-center items-center mb-2">
-            <Typography
-              children
-              variant="h5"
-              className="flex justify-center mb-5"
-            ></Typography>
-            Manajemen Pengeluaran
-            <Typography
-              variant="paragraph"
-              className="text-gray-500 flex justify-center items-center mb-10 text-sm w-2/3 text-center"
-            >
-              Manajemen keuangan adalah praktik mengelola dana dan sumber daya
-              finansial untuk mencapai tujuan keuangan pribadi atau perusahaan.
-            </Typography>
-          </div>
           <div className="flex justify-center">
             <Card shadow={false} className="bg-white flex justify-center">
               <div className="flex justify-center ">
                 <form className="my-8 mx-8 w-1/2 sm:w-96 ">
                   <div>
                     <Tittle
-                      name="Pengingat"
-                      subTittle="Pengingat tagihan dan kebutuhan adalah pesan yang digunakan untuk mengingatkan tentang pembayaran tagihan dan kebutuhan penting yang harus dipenuhi. "
+                      name="Manajemen Pengeluaran"
+                      subTittle="Manajemen keuangan adalah praktik mengelola dana dan sumber daya
+                      finansial untuk mencapai tujuan keuangan pribadi atau perusahaan."
                     />
                   </div>
                   <div className="mb-1 flex flex-col gap-6">
@@ -132,11 +115,20 @@ export default function FormDetailPenegeluaran() {
                 </form>
                 <div className="bg-primary">
                   <Image
+                    className="mt-44 ml-12"
                     priority
                     src={img}
                     alt=""
-                    width={529}
+                    width={329}
                     height={179}
+                  ></Image>
+                  <Image
+                    className="-mt-5"
+                    src={Elips}
+                    alt=""
+                    priority
+                    width={429}
+                    height={411.18}
                   ></Image>
                 </div>
               </div>

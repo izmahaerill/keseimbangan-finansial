@@ -17,6 +17,10 @@ const config: Config = withMT({
       xl: "1280px",
     },
     extend: {},
+    lineHeight: {
+      "extra-loose": "1.5",
+      "12": "4rem",
+    },
     colors: {
       primary: "#A900F0",
       secondary: "#FFCC00",

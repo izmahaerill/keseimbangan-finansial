@@ -10,13 +10,13 @@ import {
 export default function VidEducation() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center mb-2">
-        <Typography variant="h3" className="flex justify-center mb-5">
+      <div className="flex flex-col justify-center items-center mb-2 mt-16">
+        <Typography variant="h3" className="flex justify-center mb-10">
           Video Edukasi
         </Typography>
         <Typography
           variant="paragraph"
-          className="text-gray-500 flex justify-center items-center mb-10 text-lg w-2/3 text-center"
+          className="text-gray-600 flex justify-center items-center mb-10 text-lg w-2/3 text-center"
         >
           Bebagai macam video edukasi untuk kepentingan mengatur keuangan untuk
           mencapai keseimbangan finansial yang lebih baik
