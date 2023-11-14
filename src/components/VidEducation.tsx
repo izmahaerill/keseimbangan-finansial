@@ -22,7 +22,7 @@ export default function VidEducation() {
           mencapai keseimbangan finansial yang lebih baik
         </Typography>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-5">
         {VIDEDUCATION.map(({ image, tittle, manag, keu, subFooter }, index) => (
           <div key={tittle}>
             <Card className="mt-6 w-96">
