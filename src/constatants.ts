@@ -29,19 +29,19 @@ export const ARTIKEL: Artikel[] = [
 
 export const QUOTES: Quotes[] = [
   {
-    tittle: "Obi",
+    tittle: '"Obi"',
     sub: '"Uang bisa menjadi alat yang hebat jika dikelola dengan bijak, tetapi bisa menjadi penguasa yang kejam jika dibiarkan menguasai kita."',
   },
   {
-    tittle: "Indra",
+    tittle: '"Indra"',
     sub: '"Jangan pernah meremehkan kekuatan menginvestasikan uang Anda. Investasi yang cerdas adalah kunci untuk menciptakan kekayaan yang berkelanjutan."',
   },
   {
-    tittle: "Indira",
+    tittle: '"Indira"',
     sub: '"Jika Anda tidak mengendalikan uang Anda, maka uang akan mengendalikan Anda."',
   },
   {
-    tittle: "Bisma",
+    tittle: '"Bisma"',
     sub: '"Kebebasan finansial adalah ketika penghasilan pasif Anda melebihi biaya hidup Anda, memungkinkan Anda hidup sesuai keinginan tanpa khawatir tentang uang."',
   },
 ];

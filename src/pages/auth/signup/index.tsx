@@ -2,10 +2,20 @@ import Ellipse from "@/img/Ellipse 859.png";
 import Illustration from "@/img/Illustration.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent } from "react";
 
 export default function SignUp() {
+  async function registerHandler(e: FormEvent) {
+    e.preventDefault();
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const formDataJSON = Object.fromEntries(formData.entries());
+    console.log(formDataJSON);
+    await axios.post("http://localhost:3000/api/register", formDataJSON);
+  }
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
       <div className="bg-primary p-20 rounded-lg w-1/2">
@@ -48,12 +58,14 @@ export default function SignUp() {
             Please enter your detail
           </Typography>
         </div>
-        <form className="flex flex-col gap-5 w-full">
+        <form className="flex flex-col gap-5 w-full" onSubmit={registerHandler}>
           <div>
             <Typography variant="h6">First name*</Typography>
             <Input
               type="text"
               size="lg"
+              id="username"
+              name="username"
               placeholder="Username"
               className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
@@ -73,6 +85,8 @@ export default function SignUp() {
             <Input
               type="email"
               size="lg"
+              id="email"
+              name="email"
               placeholder="Email"
               className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
@@ -92,6 +106,8 @@ export default function SignUp() {
             <Input
               type="password"
               size="lg"
+              id="password"
+              name="password"
               placeholder="Password"
               className="!border-t-blue-gray-200 focus:!border-t-gray-900"
               labelProps={{
@@ -113,6 +129,8 @@ export default function SignUp() {
             <Typography variant="h6">Confirm Password*</Typography>
             <Input
               type="password"
+              id="confirm_password"
+              name="password"
               size="lg"
               placeholder="Confirm Password"
               className="!border-t-blue-gray-200 focus:!border-t-gray-900"

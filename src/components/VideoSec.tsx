@@ -8,17 +8,26 @@ import {
 } from "@material-tailwind/react";
 
 export default function VideoSec() {
+  const LinkVid = [""];
+
   return (
     <div>
-      <div className="flex justify-center gap-8">
+      <div className="flex justify-center gap-6">
         {VIDEDUCATION.map(({ image, tittle, manag, keu, subFooter }, index) => (
           <div key={tittle}>
-            <Card className="mt-6 w-80">
-              <CardHeader color="blue-gray" className="relative h-56">
-                <img src={image} alt="card-image" className="w-fitt" />
+            <Card className="mt-6 w-72 hover:scale-105 duration-700">
+              <CardHeader color="blue-gray" className="relative  ">
+                <img
+                  id="img"
+                  src={image}
+                  alt="card-image"
+                  className="w-fitt w-auto h-auto"
+                  height="auto"
+                  width="auto"
+                />
               </CardHeader>
               <CardBody>
-                <Typography variant="h6" color="blue-gray" className="mb-2">
+                <Typography variant="h6" color="blue-gray" className="mb-1">
                   {tittle}
                 </Typography>
               </CardBody>

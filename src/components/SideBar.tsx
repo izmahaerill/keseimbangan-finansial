@@ -5,7 +5,6 @@ import {
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import {
-  Card,
   List,
   ListItem,
   ListItemPrefix,
@@ -14,8 +13,8 @@ import {
 
 export default function SideBar() {
   return (
-    <Card className="h-96 w-full max-w-[18rem]">
-      <div className="mb-2 p-4">
+    <div className="h-96 mt-40 w-full max-w-[18rem] mr-6">
+      <div className="mb-2 px-4 pt-0 ">
         <Typography variant="h3" color="blue-gray">
           Kategori
         </Typography>
@@ -46,6 +45,6 @@ export default function SideBar() {
           Keuangan Keluarga
         </ListItem>
       </List>
-    </Card>
+    </div>
   );
 }

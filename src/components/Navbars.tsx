@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   };
 
   return (
-    <nav className="p-4 shadow-sm px-14">
+    <nav className="p-4 shadow-sm px-14 mb-20">
       <div className="flex items-center justify-between">
         {/* Bagian 1: Logo */}
         <div className="flex items-center">
@@ -49,14 +49,14 @@ const Navbar: React.FC<NavbarProps> = () => {
         {/* Bagian 2: Menu */}
         <div className="hidden md:flex items-center space-x-4 ">
           <Link
-            href="#"
-            className="hover:bg-secondary p-2 rounded-md transition duration-150 ease-out hover:ease-in"
+            href="/managemen"
+            className="hover:bg-purple-100 p-2 rounded-md transition duration-150 ease-out hover:ease-in"
           >
             Manajemen Keuangan
           </Link>
           <Link
-            href="#"
-            className="hover:bg-secondary p-2 rounded-md transition duration-150 ease-out hover:ease-in"
+            href="/remainder"
+            className="hover:bg-purple-100 p-2 rounded-md transition duration-150 ease-out hover:ease-in"
           >
             Pengingat
           </Link>
@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             onMouseEnter={openEduDropdown}
             onMouseLeave={closeEduDropdown}
           >
-            <button className="flex items-center hover:bg-secondary p-2 rounded-md focus:outline-none transition duration-150 ease-out hover:ease-in">
+            <button className="flex items-center hover:bg-purple-100 p-2 rounded-md focus:outline-none transition duration-150 ease-out hover:ease-in">
               Edukasi
               <ChevronDownIcon
                 className={`ml-1 h-4 w-4 ${
@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
             {eduDropdownOpen && (
               <div
-                className="absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                className="absolute left-0 mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
                 onMouseEnter={openEduDropdown}
                 onMouseLeave={closeEduDropdown}
               >
@@ -90,24 +90,17 @@ const Navbar: React.FC<NavbarProps> = () => {
                 >
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
+                    className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
-                    DP 1
+                    Artikel
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
+                    className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
-                    DP 2
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
-                    role="menuitem"
-                  >
-                    DP 3
+                    Video
                   </Link>
                 </div>
               </div>
@@ -120,7 +113,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             onMouseEnter={openCalcDropdown}
             onMouseLeave={closeCalcDropdown}
           >
-            <button className="flex items-center hover:bg-secondary p-2 rounded-md focus:outline-none transition duration-150 ease-out hover:ease-in">
+            <button className="flex items-center hover:bg-purple-100 p-2 rounded-md focus:outline-none transition duration-150 ease-out hover:ease-in">
               <span>Kalkulator</span>
               <ChevronDownIcon
                 className={`h-4 w-4 ml-2 ${
@@ -131,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
             {calcDropdownOpen && (
               <div
-                className="absolute left-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                className="absolute left-0 mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
                 onMouseEnter={openCalcDropdown}
                 onMouseLeave={closeCalcDropdown}
               >
@@ -143,39 +136,35 @@ const Navbar: React.FC<NavbarProps> = () => {
                 >
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
+                    className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
-                    Cal 1
+                    Dana Darurat
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
+                    className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
-                    Cal 2
-                  </Link>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-anjirr hover:bg-secondary"
-                    role="menuitem"
-                  >
-                    Cal 3
+                    Cicilan Pinjaman
                   </Link>
                 </div>
               </div>
             )}
           </div>
         </div>
-
         {/* Bagian 3: Button Login dan Sign Up */}
         <div className="flex items-center space-x-4">
-          <button className="text-anjirr px-4 py-2 rounded bg-secondary hover:bg-yellow-700 transition duration-150 ease-out hover:ease-in">
-            Login
-          </button>
-          <button className="text-anjirr outline outline-1 rounded-md outline-secondary p-2 hover:bg-secondary transition duration-150 ease-out hover:ease-in">
-            Sign Up
-          </button>
+          <Link href="/auth/signin">
+            <button className="text-anjirr px-4 py-2 rounded bg-secondary hover:bg-yellow-700 transition duration-150 ease-out hover:ease-in">
+              Login
+            </button>
+          </Link>
+          <Link href="/auth/signup">
+            <button className="text-anjirr outline outline-1 rounded-md outline-secondary p-2 hover:bg-secondary transition duration-150 ease-out hover:ease-in">
+              Sign Up
+            </button>
+          </Link>
         </div>
       </div>
     </nav>

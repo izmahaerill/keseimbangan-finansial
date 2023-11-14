@@ -2,12 +2,28 @@ import Ellipse from "@/img/Ellipse 859.png";
 import Illustration from "@/img/Illustration.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { FormEvent } from "react";
 
-export default function SignUp() {
+export default function Login() {
+  async function handleFormSubmit(e: FormEvent) {
+    e.preventDefault();
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const formDataJSON = Object.fromEntries(formData.entries());
+
+    const response = await axios.post(
+      "http://localhost:3000/api/login",
+      formDataJSON
+    );
+
+    console.log(response.data);
+  }
+
   return (
-    <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
+    <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full ">
       <div className="bg-primary p-20 rounded-lg w-1/2">
         <Typography variant="h3" color="white" className="mb-2">
           The simplest way to manage your money
@@ -18,12 +34,14 @@ export default function SignUp() {
         <div className="flex flex-col items-center my-16">
           <Image
             src={Illustration}
+            priority
             alt="Illustration"
             width={450}
             height={460}
           />
           <Image
             src={Ellipse}
+            priority
             alt="Ellipse"
             width={250}
             height={75}
@@ -48,10 +66,15 @@ export default function SignUp() {
             Please enter your detail
           </Typography>
         </div>
-        <form className="flex flex-col gap-5 w-full">
+        <form
+          className="flex flex-col gap-5 w-full"
+          onSubmit={handleFormSubmit}
+        >
           <div>
             <Typography variant="h6">Email*</Typography>
             <Input
+              id="email"
+              name="email"
               type="email"
               size="lg"
               placeholder="Email"
@@ -71,6 +94,8 @@ export default function SignUp() {
           <div>
             <Typography variant="h6">Password*</Typography>
             <Input
+              id="password"
+              name="password"
               type="password"
               size="lg"
               placeholder="Password"
