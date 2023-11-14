@@ -66,6 +66,18 @@ export default function DanaDarurat() {
             }
           />
         </div>
+        <div>
+          <label htmlFor="">Total Dana yang Dibutuhkan</label>
+          <Input
+            crossOrigin={""}
+            icon={
+              <Icon
+                icon="tabler:info-square-rounded"
+                className="text-xl text-gray-900"
+              />
+            }
+          />
+        </div>
       </Card>
     </div>
   );
