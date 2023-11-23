@@ -135,7 +135,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                   aria-labelledby="kalkulator-menu"
                 >
                   <Link
-                    href="#"
+                    href="/danaDarurat"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
