@@ -111,9 +111,17 @@ export default function Login() {
               }
               crossOrigin={undefined}
             />
-            <Typography variant="small" className="font-normal text-right">
-              Must be at least 8 characters
-            </Typography>
+            <div className="flex justify-between items-center">
+              <div className="flex gap-3">
+                <input type="checkbox" />
+                <label htmlFor="">Remember Me</label>
+              </div>
+              <Link href="/auth/forgotten">
+                <Typography variant="small" className="font-normal text-right">
+                  Forgot Password?
+                </Typography>
+              </Link>
+            </div>
           </div>
 
           <Button
@@ -127,7 +135,7 @@ export default function Login() {
         </form>
         <div className="flex gap-3 items-center w-full">
           <span className="h-0.5 bg-black w-full" />
-          <Typography variant="h6">or</Typography>
+          <Typography variant="h6">Or</Typography>
           <span className="h-0.5 bg-black w-full" />
         </div>
         <Button
@@ -140,7 +148,7 @@ export default function Login() {
         </Button>
         <Typography variant="small" color="gray" className="w-full mt-5">
           Don’t have an account ?{" "}
-          <Link href="/auth/signin" className="text-black font-bold">
+          <Link href="/auth/signup" className="text-black font-bold">
             Sign Up
           </Link>
         </Typography>

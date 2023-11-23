@@ -160,7 +160,7 @@ export default function SignUp() {
         </form>
         <div className="flex gap-3 items-center w-full">
           <span className="h-0.5 bg-black w-full" />
-          <Typography variant="h6">or</Typography>
+          <Typography variant="h6">Or</Typography>
           <span className="h-0.5 bg-black w-full" />
         </div>
         <Button
@@ -172,7 +172,7 @@ export default function SignUp() {
           Log in With Google
         </Button>
         <Typography variant="small" color="gray" className="w-full mt-5">
-          Already have an account?{" "}
+          Already have an account ? {""}
           <Link href="/auth/signin" className="text-black font-bold">
             Log in
           </Link>

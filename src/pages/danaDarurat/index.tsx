@@ -3,7 +3,10 @@ import Navbar from "@/components/Navbars";
 import Tittle from "@/components/Tittle";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Card, Input } from "@material-tailwind/react";
+
 export default function DanaDarurat() {
+  const colors = [`text-primary`];
+
   return (
     <div>
       <Navbar />

@@ -4,6 +4,7 @@ import {
   type Icons,
   type Quotes,
   type Remainder,
+  type table_rows,
 } from "@/interfaces";
 export const ARTIKEL: Artikel[] = [
   {
@@ -96,5 +97,28 @@ export const REMAINDER: Remainder[] = [
           "Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga.",
       },
     ],
+  },
+];
+
+export const TABLE_ROWS: table_rows[] = [
+  {
+    id: 1,
+    pengeluaran: "John Michael",
+    kategori: "Manager",
+    date: "23/04/18",
+    spending: "Rp.20.000",
+  },
+  {
+    id: 2,
+    pengeluaran: "Alexa Liras",
+    kategori: "Developer",
+    date: "23/04/18",
+    spending: "Rp.30.000",
+  },
+  {
+    pengeluaran: "",
+    kategori: "",
+    date: "Total",
+    spending: "Rp.50.000",
   },
 ];

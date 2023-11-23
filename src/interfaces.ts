@@ -34,3 +34,11 @@ export interface Remainder {
     subTittle: string;
   }>;
 }
+
+export interface table_rows {
+  id?: number;
+  pengeluaran: string;
+  kategori: string;
+  date: string;
+  spending: string;
+}
