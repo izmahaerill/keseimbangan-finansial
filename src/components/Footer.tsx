@@ -4,13 +4,12 @@ import { Icon } from "@iconify/react";
 import { List, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "./Layout/Layout";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Layout>
+    <div>
       <div className="mt-[50rem]">
         <footer className="relative mt-[100px]">
           <div className="flex justify-around items-center">
@@ -64,6 +63,6 @@ export default function Footer() {
           </div>
         </footer>
       </div>
-    </Layout>
+    </div>
   );
 }

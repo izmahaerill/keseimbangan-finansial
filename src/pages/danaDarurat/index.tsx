@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import Layout from "@/components/Layout/Layout";
 import Navbar from "@/components/Navbars";
 import Tittle from "@/components/Tittle";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -9,7 +8,7 @@ export default function DanaDarurat() {
   const colors = [`text-primary`];
 
   return (
-    <Layout>
+    <div>
       <Navbar />
       <HeroSection />
       <Card>
@@ -83,6 +82,6 @@ export default function DanaDarurat() {
           />
         </div>
       </Card>
-    </Layout>
+    </div>
   );
 }
