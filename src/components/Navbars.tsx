@@ -132,7 +132,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                     Dana Darurat
                   </Link>
                   <Link
-                    href="/cicilanPinjaman"
+                    href="/kalkulator"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >

@@ -52,11 +52,11 @@ export default function FormCicilan() {
                     subTittle="Pengingat tagihan dan kebutuhan adalah pesan yang digunakan untuk mengingatkan tentang pembayaran tagihan dan kebutuhan penting yang harus dipenuhi. "
                   /> */}
                   </div>
-                  <p className="text-center text-[12px] leading-2">
+                  <Typography className="text-center text-[12px] leading-2">
                     Cicilan pinjaman adalah pembayaran berkala yang dilakukan
                     oleh peminjam kepada pemberi pinjaman sebagai bagian dari
                     pengembalian pinjaman yang diberikan.
-                  </p>
+                  </Typography>
                 </div>
                 <div className="mb-1 flex flex-col gap-6">
                   <Typography
