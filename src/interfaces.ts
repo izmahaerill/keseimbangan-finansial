@@ -12,6 +12,7 @@ export interface Quotes {
 }
 
 export interface VidEducation {
+  id: number;
   image: string;
   tittle: string;
   manag: string;
@@ -41,4 +42,11 @@ export interface table_rows {
   kategori: string;
   date: string;
   spending: string;
+}
+
+export interface data {
+  id: number;
+  year: number;
+  userGain: number;
+  userLost: number;
 }

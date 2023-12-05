@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <div>
-      <div className="mt-[50rem]">
+      <div className="mt-[65rem]">
         <footer className="relative mt-[100px]">
           <div className="flex justify-around items-center">
             <div>
@@ -42,7 +42,7 @@ export default function Footer() {
                 </Link>
               </List>
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-6 text-anjirr">
               {LOGO.map(({ icon, url }) => (
                 <div key={icon}>
                   <Link href={url} className="text-4xl">
@@ -52,7 +52,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex justify-between mx-20 mb-10 mt-10">
+          <div className="flex justify-between mx-20 mb-10 mt-10 text-anjirr">
             <Typography variant="paragraph">
               &copy; {currentYear} My Finance. All Rights Reserved.
             </Typography>

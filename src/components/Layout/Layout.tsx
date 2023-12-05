@@ -6,14 +6,20 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-const lato = Lato({ subsets: ["latin"], weight: "400" });
+const lato = Lato({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-lato",
+});
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className={`${lato.className}`}>
+    <div className={`overflow-hidden ${lato.variable}`}>
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      <div className="mt-96">
+        <Footer />
+      </div>
     </div>
   );
 }

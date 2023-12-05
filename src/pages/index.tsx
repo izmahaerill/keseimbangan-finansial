@@ -1,20 +1,17 @@
 import Artikel from "@/components/Artikel";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import Navbar from "@/components/Navbars";
+import Layout from "@/components/Layout/Layout";
 import Quotes from "@/components/Quotes";
 import VidEducation from "@/components/VidEducation";
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <HeroSection />
       <Artikel />
       <Quotes />
       <VidEducation />
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 export default Home;

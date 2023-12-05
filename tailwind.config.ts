@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const withMT = require("@material-tailwind/react/utils/withMT");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = withMT({
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -10,7 +11,11 @@ const config: Config = withMT({
       lg: "1024px",
       xl: "1280px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-lato)", ...defaultTheme.fontFamily.sans],
+      },
+    },
     lineHeight: {
       "extra-loose": "1.5",
       "12": "4rem",
@@ -19,9 +24,6 @@ const config: Config = withMT({
       primary: "#A900F0",
       secondary: "#FFCC00",
       anjirr: "#161616",
-    },
-    fontFamily: {
-      lato: ["Lato", "sans-serif"],
     },
   },
   plugins: [],

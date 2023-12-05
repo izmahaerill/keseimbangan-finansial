@@ -6,7 +6,7 @@ import bulet3 from "@/img/bulet3.png";
 import buletKuning from "@/img/buletKuning.png";
 import Line from "@/img/garis1.png";
 import Line2 from "@/img/garis2.png";
-import img from "@/img/heroimage.png";
+import heroImage from "@/img/heroimage.png";
 import imageHouse from "@/img/house.png";
 import { Button } from "@material-tailwind/react";
 import Image from "next/image";
@@ -19,9 +19,9 @@ export default function HeroSection() {
         <div>
           <Image src={Rectangle1} alt="" priority className="top-96"></Image>
         </div>
-        <div className="flex justify-center items-center mt-5">
-          <div className="flex flex-col items-center justify-center tracking-tighter">
-            <Image src={img} alt="" width={0} height={0} priority />
+        <div className="flex justify-center items-center mt-5 ">
+          <div className="flex flex-col items-center justify-center  ">
+            <Image src={heroImage} alt="" width={0} height={0} priority />
             <Link href="/auth/signup">
               <Button
                 size="lg"

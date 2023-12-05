@@ -12,15 +12,15 @@ const TABLE_HEAD = [
   "Jumlah Pengeluaran",
 ];
 
-export default function PengingatSection() {
+export default function ManagemenSection() {
   return (
     <div>
       <Card className="rounded-lg shadow-2xl ">
         <div className="flex justify-center">
           <div className="px-16 w-[35rem] mt-20">
             <Tittle
-              name="Detail Pengingat"
-              subTittle="Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga."
+              name="Detail Pengeluaran"
+              subTittle="Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga.s"
             />
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function PengingatSection() {
           </table>
           <div className="flex justify-end gap-5 mb-20 mr-12 ">
             <Link href="/managemen/Grafik">
-              <Button className="bg-secondary text-black">Lihat Data</Button>
+              <Button className="bg-secondary text-black">Lihat Grafik</Button>
             </Link>
             <Link href="#buttons-with-link">
               <Button className="bg-secondary text-black">Simpan</Button>

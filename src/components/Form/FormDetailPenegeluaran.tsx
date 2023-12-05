@@ -102,7 +102,7 @@ export default function FormDetailPenegeluaran() {
                 />
               </div>
               <div className="flex justify-end gap-5 mt-10 ">
-                <Link href="#buttons-with-link">
+                <Link href="/managemen/DetailSection">
                   <Button className="bg-secondary text-black">
                     Lihat Data
                   </Button>

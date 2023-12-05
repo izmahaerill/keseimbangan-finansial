@@ -5,9 +5,11 @@ import { Button, Input, Typography } from "@material-tailwind/react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FormEvent } from "react";
 
 export default function SignUp() {
+  const router = useRouter();
   async function registerHandler(e: FormEvent) {
     e.preventDefault();
     const formElement = e.target as HTMLFormElement;
@@ -15,6 +17,7 @@ export default function SignUp() {
     const formDataJSON = Object.fromEntries(formData.entries());
     console.log(formDataJSON);
     await axios.post("http://localhost:3000/api/register", formDataJSON);
+    router.push("/");
   }
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">

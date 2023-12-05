@@ -14,7 +14,7 @@ import {
 export default function SideBar() {
   return (
     <div className="h-96 mt-40 w-full max-w-[18rem] mr-6">
-      <div className="mb-2 px-4 pt-0 ">
+      <div className="mb-2 pt-0 ">
         <Typography variant="h3" color="blue-gray">
           Kategori
         </Typography>

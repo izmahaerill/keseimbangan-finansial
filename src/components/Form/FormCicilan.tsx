@@ -31,20 +31,20 @@ export default function FormCicilan() {
   return (
     <>
       <div>
-        <div className="flex justify-center rounded-2xl overflow-hidden">
+        <div className="flex justify-center rounded-lg overflow-hidden">
           <Card
             color="transparent"
             shadow={true}
-            className="bg-white flex justify-center shadow-2xl mb-10 w-[70%] p-10"
+            className="bg-white flex justify-center rounded-lg shadow-2xl mb-10 w-[68.5%] p-10"
           >
             <div className="flex justify-center max-h-[70rem]">
               <form className="my-8 mx-8 md:w-full sm:w-96 px-10">
                 <div className="pb-5 w-96 m-auto">
                   <div className="flex gap-1 justify-center pb-2">
-                    <Typography className="font-bold text-3xl text-black">
+                    <Typography className="font-bold text-3xl text-anjirr">
                       Cicilan
                     </Typography>
-                    <Typography className="font-bold text-3xl text-[purple] ">
+                    <Typography className="font-bold text-3xl text-primary ">
                       Pinjaman
                     </Typography>
                     {/* <Tittle
@@ -148,7 +148,7 @@ export default function FormCicilan() {
                   </div>
                 </div> */}
                 <Card className="w-full shadow-none">
-                  <Typography className="font-bold text-[32px] text-black pb-5">
+                  <Typography className="font-bold text-[32px] text-anjirr pb-5">
                     Simulai Pembayaran
                   </Typography>
                   <table className="w-full min-w-max table-auto text-center">

@@ -5,9 +5,12 @@ import { Button, Input, Typography } from "@material-tailwind/react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FormEvent } from "react";
 
 export default function Login() {
+  const router = useRouter();
+
   async function handleFormSubmit(e: FormEvent) {
     e.preventDefault();
     const formElement = e.target as HTMLFormElement;
@@ -18,6 +21,7 @@ export default function Login() {
       "http://localhost:3000/api/login",
       formDataJSON
     );
+    router.push("/");
 
     console.log(response.data);
   }

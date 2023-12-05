@@ -65,7 +65,7 @@ export default function FormDetailPenegeluaran() {
                   color="blue-gray"
                   className="-mb-3"
                 >
-                  Waktu Transaksi
+                  Waktu Di Ingatkan
                 </Typography>
                 <Input
                   crossOrigin={""}
@@ -100,7 +100,7 @@ export default function FormDetailPenegeluaran() {
                 />
               </div>
               <div className="flex justify-end gap-5 mt-10 ">
-                <Link href="#buttons-with-link">
+                <Link href="/remainder/DetailSection">
                   <Button className="bg-secondary text-black">
                     Lihat Data
                   </Button>

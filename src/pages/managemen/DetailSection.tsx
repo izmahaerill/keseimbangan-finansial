@@ -1,21 +1,16 @@
-import Footer from "@/components/Footer";
-import FormDetailPenegeluaran from "@/components/Form/FormDetailPenegeluaran";
+import ManagemenSection from "@/components/CalcSection/ManagemenSection";
 import HeroImage from "@/components/HeroImage";
-import Navbars from "@/components/Navbars";
+import Layout from "@/components/Layout/Layout";
 
 export default function Managemen() {
   return (
-    <div>
-      <Navbars />
+    <Layout>
       <HeroImage />
       <div className="flex justify-center">
         <div className="absolute top-[29.7rem] z-10">
-          <FormDetailPenegeluaran />
+          <ManagemenSection />
         </div>
       </div>
-      <footer className="mt-[50rem]">
-        <Footer />
-      </footer>
-    </div>
+    </Layout>
   );
 }
