@@ -4,6 +4,8 @@ import {
   type Icons,
   type Quotes,
   type Remainder,
+  type data,
+  type table_rows,
 } from "@/interfaces";
 export const ARTIKEL: Artikel[] = [
   {
@@ -48,6 +50,7 @@ export const QUOTES: Quotes[] = [
 
 export const VIDEDUCATION: VidEducation[] = [
   {
+    id: 1,
     image:
       "https://img.freepik.com/free-photo/high-angle-two-stacks-coins-grass-with-jar-plants_23-2148803922.jpg",
     tittle: "Investasi Untuk Keseimbangan Finansial Dimasa Depan",
@@ -56,6 +59,7 @@ export const VIDEDUCATION: VidEducation[] = [
     subFooter: "2 Menit 30 Detik",
   },
   {
+    id: 2,
     image:
       "https://img.freepik.com/free-photo/high-angle-two-stacks-coins-grass-with-jar-plants_23-2148803922.jpg",
     tittle: "Investasi Untuk Keseimbangan Finansial Dimasa Depan",
@@ -64,6 +68,7 @@ export const VIDEDUCATION: VidEducation[] = [
     subFooter: "2 Menit 30 Detik",
   },
   {
+    id: 3,
     image:
       "https://img.freepik.com/free-photo/high-angle-two-stacks-coins-grass-with-jar-plants_23-2148803922.jpg",
     tittle: "Investasi Untuk Keseimbangan Finansial Dimasa Depan",
@@ -96,5 +101,61 @@ export const REMAINDER: Remainder[] = [
           "Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga.",
       },
     ],
+  },
+];
+
+export const TABLE_ROWS: table_rows[] = [
+  {
+    id: 1,
+    pengeluaran: "John Michael",
+    kategori: "Manager",
+    date: "23/04/18",
+    spending: "Rp.20.000",
+  },
+  {
+    id: 2,
+    pengeluaran: "Alexa Liras",
+    kategori: "Developer",
+    date: "23/04/18",
+    spending: "Rp.30.000",
+  },
+  {
+    pengeluaran: "",
+    kategori: "",
+    date: "Total",
+    spending: "Rp.50.000",
+  },
+];
+
+export const Data: data[] = [
+  {
+    id: 1,
+    year: 2016,
+    userGain: 80000,
+    userLost: 823,
+  },
+  {
+    id: 2,
+    year: 2017,
+    userGain: 45677,
+    userLost: 345,
+  },
+  {
+    id: 3,
+    year: 2018,
+    userGain: 78888,
+    userLost: 555,
+  },
+  {
+    id: 4,
+    year: 2019,
+    userGain: 90000,
+    userLost: 4555,
+  },
+  {
+    id: 5,
+    year: 2020,
+    userGain: 4300,
+    userLost: 234,
   },
 ];

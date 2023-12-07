@@ -5,9 +5,11 @@ import { Button, Input, Typography } from "@material-tailwind/react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { FormEvent } from "react";
 
 export default function SignUp() {
+  const router = useRouter();
   async function registerHandler(e: FormEvent) {
     e.preventDefault();
     const formElement = e.target as HTMLFormElement;
@@ -15,6 +17,7 @@ export default function SignUp() {
     const formDataJSON = Object.fromEntries(formData.entries());
     console.log(formDataJSON);
     await axios.post("http://localhost:3000/api/register", formDataJSON);
+    router.push("/");
   }
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
@@ -160,7 +163,7 @@ export default function SignUp() {
         </form>
         <div className="flex gap-3 items-center w-full">
           <span className="h-0.5 bg-black w-full" />
-          <Typography variant="h6">or</Typography>
+          <Typography variant="h6">Or</Typography>
           <span className="h-0.5 bg-black w-full" />
         </div>
         <Button
@@ -172,7 +175,7 @@ export default function SignUp() {
           Log in With Google
         </Button>
         <Typography variant="small" color="gray" className="w-full mt-5">
-          Already have an account?{" "}
+          Already have an account ? {""}
           <Link href="/auth/signin" className="text-black font-bold">
             Log in
           </Link>

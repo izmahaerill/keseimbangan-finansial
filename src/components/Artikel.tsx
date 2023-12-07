@@ -5,9 +5,10 @@ import human1 from "@/img/human1.webp";
 import human2 from "@/img/human2.webp";
 import { Typography } from "@material-tailwind/react";
 import Image from "next/image";
+
 export default function Artikel() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center max-w-fit">
       <div>
         <div className="flex flex-col justify-center items-center mb-2 mt-16">
           <Typography variant="h3" className="flex justify-center mb-10">
@@ -26,8 +27,8 @@ export default function Artikel() {
           <Image
             src={img1}
             alt=""
-            width={0}
-            height={0}
+            width={570}
+            height={400}
             priority
             className="rounded-lg object-cover"
           ></Image>
@@ -79,7 +80,6 @@ export default function Artikel() {
                 <Typography>Read More</Typography>
               </div>
             </div>
-            {""}
           </div>
         </div>
         <div className="-my-36">
@@ -135,13 +135,12 @@ export default function Artikel() {
                 <Typography>Read More</Typography>
               </div>
             </div>
-            {""}
           </div>
           <Image
             src={img2}
             alt=""
-            width={0}
-            height={0}
+            width={570}
+            height={400}
             priority
             className="rounded-lg object-cover"
           ></Image>

@@ -1,4 +1,4 @@
-import FormSection from "@/components/Form/FormPengingat";
+import PengingatSection from "@/components/CalcSection/PengingatSection";
 import HeroImage from "@/components/HeroImage";
 import Layout from "@/components/Layout/Layout";
 
@@ -8,7 +8,7 @@ export default function Remainder() {
       <HeroImage />
       <div className="flex justify-center">
         <div className="absolute top-[29.7rem] z-10">
-          <FormSection />
+          <PengingatSection />
         </div>
       </div>
     </Layout>

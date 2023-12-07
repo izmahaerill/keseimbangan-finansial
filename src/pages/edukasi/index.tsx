@@ -1,15 +1,13 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbars";
+import Layout from "@/components/Layout/Layout";
 import SideBar from "@/components/SideBar";
 import VideoSec from "@/components/VideoSec";
 import { Typography } from "@material-tailwind/react";
 
 export default function Edukasi() {
   return (
-    <div>
-      <Navbar />
-      <div className="ml-[5rem]">
-        <Typography variant="h3">
+    <Layout>
+      <div className="ml-14">
+        <Typography variant="h2">
           Ingin menambah pengetahuan tentang keuangan?
         </Typography>
         <Typography className="font-normal text-gray-600">
@@ -27,9 +25,6 @@ export default function Edukasi() {
           <VideoSec />
         </div>
       </div>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    </Layout>
   );
 }

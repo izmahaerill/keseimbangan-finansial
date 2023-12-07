@@ -1,22 +1,17 @@
 import Artikel from "@/components/Artikel";
-import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import Navbars from "@/components/Navbars";
+import Layout from "@/components/Layout/Layout";
 import Quotes from "@/components/Quotes";
 import VidEducation from "@/components/VidEducation";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
-    <>
-      <Navbars />
-      <main>
-        <HeroSection />
-        <Artikel />
-        <Quotes />
-        <VidEducation />
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <HeroSection />
+      <Artikel />
+      <Quotes />
+      <VidEducation />
+    </Layout>
   );
 };
 export default Home;

@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 import img from "@/img/Frame 112.png";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
@@ -37,16 +36,13 @@ const Navbar: React.FC<NavbarProps> = () => {
   };
 
   return (
-    <nav className="p-4 shadow-sm px-14 mb-20">
+    <nav className="p-4 shadow-sm px-14 mb-20 font-sans text-anjirr">
       <div className="flex items-center justify-between">
-        {/* Bagian 1: Logo */}
         <div className="flex items-center">
           <Link href="/">
             <Image src={img} alt="Logo" className="" />
           </Link>
         </div>
-
-        {/* Bagian 2: Menu */}
         <div className="hidden md:flex items-center space-x-4 ">
           <Link
             href="/managemen"
@@ -60,8 +56,6 @@ const Navbar: React.FC<NavbarProps> = () => {
           >
             Pengingat
           </Link>
-
-          {/* Edukasi Dropdown */}
           <div
             className="relative inline-block text-left"
             onMouseEnter={openEduDropdown}
@@ -75,7 +69,6 @@ const Navbar: React.FC<NavbarProps> = () => {
                 }`}
               />
             </button>
-
             {eduDropdownOpen && (
               <div
                 className="absolute left-0 mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
@@ -89,14 +82,14 @@ const Navbar: React.FC<NavbarProps> = () => {
                   aria-labelledby="edukasi-menu"
                 >
                   <Link
-                    href="#"
+                    href="/edukasi/article"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
                     Artikel
                   </Link>
                   <Link
-                    href="#"
+                    href="/edukasi"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
@@ -106,8 +99,6 @@ const Navbar: React.FC<NavbarProps> = () => {
               </div>
             )}
           </div>
-
-          {/* Kalkulator Dropdown */}
           <div
             className="relative inline-block text-left"
             onMouseEnter={openCalcDropdown}
@@ -121,7 +112,6 @@ const Navbar: React.FC<NavbarProps> = () => {
                 }`}
               />
             </button>
-
             {calcDropdownOpen && (
               <div
                 className="absolute left-0 mt-2 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
@@ -135,14 +125,14 @@ const Navbar: React.FC<NavbarProps> = () => {
                   aria-labelledby="kalkulator-menu"
                 >
                   <Link
-                    href="#"
+                    href="/kalkulator/danaDarurat"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
                     Dana Darurat
                   </Link>
                   <Link
-                    href="#"
+                    href="/kalkulator"
                     className="block px-4 py-2 text-sm text-anjirr hover:bg-purple-100"
                     role="menuitem"
                   >
@@ -153,7 +143,6 @@ const Navbar: React.FC<NavbarProps> = () => {
             )}
           </div>
         </div>
-        {/* Bagian 3: Button Login dan Sign Up */}
         <div className="flex items-center space-x-4">
           <Link href="/auth/signin">
             <button className="text-anjirr px-4 py-2 rounded bg-secondary hover:bg-yellow-700 transition duration-150 ease-out hover:ease-in">
