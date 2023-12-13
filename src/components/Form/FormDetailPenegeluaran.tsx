@@ -1,6 +1,8 @@
 import Tittle from "@/components/Tittle";
 import Elips from "@/img/Ellipse 859.png";
 import img from "@/img/Group.png";
+import { FormEvent } from "react";
+
 import {
   Button,
   Card,
@@ -9,10 +11,23 @@ import {
   Select,
   Typography,
 } from "@material-tailwind/react";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function FormDetailPenegeluaran() {
+  const handleSubmitManagemen = async (e: FormEvent) => {
+    e.preventDefault();
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    const formDataJSON = Object.fromEntries(formData.entries());
+    const dateTransaksi = new Date(formDataJSON.waktuTransaksi as string);
+    await axios.post("http://localhost:3000/api/managemen", {
+      ...formDataJSON,
+      waktuTransaksi: dateTransaksi,
+    });
+  };
+
   return (
     <div>
       <div className="flex justify-center rounded-lg shadow-2xl">
@@ -21,7 +36,10 @@ export default function FormDetailPenegeluaran() {
           className="bg-white flex justify-center rounded-lg "
         >
           <div className="flex justify-center ">
-            <form className="my-8 mx-8 w-1/2 sm:w-96 ">
+            <form
+              onSubmit={handleSubmitManagemen}
+              className="my-8 mx-8 w-1/2 sm:w-96 "
+            >
               <div>
                 <Tittle
                   name="Manajemen Pengeluaran"
@@ -38,9 +56,9 @@ export default function FormDetailPenegeluaran() {
                   Nama Pengeluaran
                 </Typography>
                 <Input
+                  name="namaPengeluaran"
                   crossOrigin={""}
                   size="lg"
-                  placeholder="name@mail.com"
                   className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                   labelProps={{
                     className: "before:content-none after:content-none",
@@ -54,12 +72,10 @@ export default function FormDetailPenegeluaran() {
                   Kategori
                 </Typography>
                 <div>
-                  <Select label="select">
-                    <Option>Material HTML</Option>
-                    <Option>Material React</Option>
-                    <Option>Material Vue</Option>
-                    <Option>Material Angular</Option>
-                    <Option>Material Svelte</Option>
+                  <Select name="kategori" label="select">
+                    <Option value="1">kebutuhan pokok</Option>
+                    <Option>kebutuhan sekunder</Option>
+                    <Option>kebutuhan tersier</Option>
                   </Select>
                 </div>
                 <Typography
@@ -70,6 +86,7 @@ export default function FormDetailPenegeluaran() {
                   Waktu Transaksi
                 </Typography>
                 <Input
+                  name="waktuTransaksi"
                   crossOrigin={""}
                   type="date"
                   placeholder="Kategori"
@@ -89,6 +106,7 @@ export default function FormDetailPenegeluaran() {
                   Jumlah Pengeluaran
                 </Typography>
                 <Input
+                  name="jumlahPengeluaran"
                   crossOrigin={""}
                   type="number"
                   placeholder="Rp.10.000"
@@ -107,9 +125,9 @@ export default function FormDetailPenegeluaran() {
                     Lihat Data
                   </Button>
                 </Link>
-                <Link href="#buttons-with-link">
-                  <Button className="bg-secondary text-black">Simpan</Button>
-                </Link>
+                <Button type="submit" className="bg-secondary text-black">
+                  Simpan
+                </Button>
               </div>
             </form>
             <div className="bg-primary px-2 rounded-br-lg rounded-tr-lg">

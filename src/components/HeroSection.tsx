@@ -15,7 +15,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <>
-      <div className="flex justify-between mt-3">
+      <div className="flex justify-between mt-32 ">
         <div>
           <Image src={Rectangle1} alt="" priority className="top-96"></Image>
         </div>

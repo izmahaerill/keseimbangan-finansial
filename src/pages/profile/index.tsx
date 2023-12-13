@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbars";
+import Layout from "@/components/Layout/Layout";
 import images from "@/img/profile.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
@@ -7,8 +7,7 @@ import Link from "next/link";
 
 export default function SignUp() {
   return (
-    <div>
-      <Navbar />
+    <Layout>
       <div className="ml-14">
         <Typography
           variant="h2"
@@ -122,6 +121,6 @@ export default function SignUp() {
           </form>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 }

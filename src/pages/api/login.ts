@@ -16,7 +16,7 @@ export default async function handler(
     },
   });
 
-  if (!userData) return res.status(404).json({ message: "User Not Found" });
+  if (!userData) return res.status(404).json({ message: "Not Found bu!!" });
 
   const jwtToken = jwt.sign(
     {
@@ -31,13 +31,14 @@ export default async function handler(
     loginData.password
   );
   console.log(passwordValidate);
-  if (!passwordValidate)
-    return res.status(401).json({ message: "Unauthorized" });
+  if (!passwordValidate) return res.status(401).json({ message: "yahahahh" });
 
-  res.setHeader(
-    "Set-Cookie",
-    `token=${jwtToken}; HttpOnly; path="/"; SameSite=Lax; Secure`
-  );
+  const Cookie = [
+    `token=${jwtToken}; HttpOnly; path="/"; SameSite=Lax; Secure`,
+    `username=${userData.username}; HttpOnly; path="/"; SameSite=Lax; Secure`,
+  ];
+  res.setHeader("Set-Cookie", Cookie);
+
   res.status(200).json({
     email: userData.email,
     username: userData.username,

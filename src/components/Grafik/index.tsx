@@ -15,37 +15,37 @@ const data: TData[] = [
   {
     id: 1,
     month: "XS",
-    userGain: 45677,
+    userGain: 45,
     userLost: 345,
   },
   {
     id: 2,
     month: "S",
-    userGain: 78888,
+    userGain: 25,
     userLost: 555,
   },
   {
     id: 3,
     month: "M",
-    userGain: 90000,
+    userGain: 100,
     userLost: 4555,
   },
   {
     id: 4,
     month: "M",
-    userGain: 4300,
+    userGain: 160,
     userLost: 234,
   },
   {
     id: 5,
     month: "XL",
-    userGain: 4000,
+    userGain: 40,
     userLost: 5000,
   },
   {
     id: 6,
     month: "XXL",
-    userGain: 4000,
+    userGain: 140,
     userLost: 5000,
   },
 ];
@@ -53,10 +53,30 @@ const data: TData[] = [
 Chart.register(CategoryScale);
 
 export default function Grafik() {
+  const chartOptions = {
+    plugins: {
+      title: {
+        display: true,
+      },
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 200,
+        min: 0,
+        stepSize: 25, // Ganti ke 24 sesuai dengan keinginan Anda
+        callback: (value: number) => value.toString(),
+      },
+    },
+  };
+
   return (
     <div>
       <Card className="w-[55.5rem] px-20 rounded-lg">
-        <div className=" flex justify-center items-center px-36 mt-20">
+        <div className="flex justify-center items-center px-36 mt-20">
           <Tittle
             name="Grafik Pengeluaran"
             subTittle="Manajemen Pengeluaran adalah suatu fitur yang digunakan untuk mengelola dan mengontrol pengeluaran keuangan dalam sebuah rumah tangga."
@@ -93,16 +113,7 @@ export default function Grafik() {
                 },
               ],
             }}
-            options={{
-              plugins: {
-                title: {
-                  display: true,
-                },
-                legend: {
-                  display: false,
-                },
-              },
-            }}
+            options={chartOptions}
           />
           <div className="flex gap-10">
             <div className="flex gap-2 items-center ">

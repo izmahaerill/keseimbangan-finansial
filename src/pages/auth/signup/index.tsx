@@ -21,7 +21,7 @@ export default function SignUp() {
   }
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
-      <div className="bg-primary p-20 rounded-lg w-1/2">
+      <div className="bg-primary p-20 rounded-lg w-1/2 hidden sm:p-0 sm:block">
         <Typography variant="h3" color="white" className="mb-2">
           The simplest way to manage your money
         </Typography>

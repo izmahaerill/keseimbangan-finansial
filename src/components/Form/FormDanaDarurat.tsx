@@ -37,7 +37,7 @@ export default function FormDanaDarurat() {
           <Card
             color="transparent"
             shadow={true}
-            className="bg-white flex justify-center shadow-2xl mb-10 w-[68.5%] p-10"
+            className="bg-white flex justify-center rounded-lg shadow-2xl mb-10 w-[68.5%] p-10"
           >
             <div className="flex justify-center max-h-[70rem]">
               <form className="my-8 mx-8 md:w-full sm:w-96 px-10">

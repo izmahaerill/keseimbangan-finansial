@@ -10,7 +10,7 @@ export default function Artikel() {
   return (
     <div className="flex justify-center items-center max-w-fit">
       <div>
-        <div className="flex flex-col justify-center items-center mb-2 mt-16">
+        <div className="flex flex-col justify-center items-center mb-2 mt-20">
           <Typography variant="h3" className="flex justify-center mb-10">
             Artikel Edukasi
           </Typography>

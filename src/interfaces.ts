@@ -13,8 +13,17 @@ export interface Quotes {
 
 export interface VidEducation {
   id: number;
-  image: string;
   tittle: string;
+  src: string;
+  manag: string;
+  keu: string;
+  subFooter: string;
+}
+
+export interface VideoSection {
+  id: number;
+  tittle: string;
+  src: string;
   manag: string;
   keu: string;
   subFooter: string;
