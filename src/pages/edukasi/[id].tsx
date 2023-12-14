@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout/Layout";
-import { IVideoData, VIDEO_EDUCATION } from "@/constatants";
+import { VIDEO_EDUCATION } from "@/constatants";
+import { VideoData } from "@/interfaces";
 import { Typography } from "@material-tailwind/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function Article() {
-  const [detailEducation, setDetailEducation] = useState<IVideoData>();
+  const [detailEducation, setDetailEducation] = useState<VideoData>();
 
   const router = useRouter();
 

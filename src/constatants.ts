@@ -1,4 +1,5 @@
 import {
+  VideoEducation,
   VideoSection,
   type Artikel,
   type Icons,
@@ -75,21 +76,7 @@ export const VIDEOSECTION: VideoSection[] = [
   },
 ];
 
-export interface IVideoEducation {
-  id: number;
-  name: string;
-  data: IVideoData[];
-}
-
-export interface IVideoData {
-  id: number;
-  title: string;
-  src: string;
-  duration: string;
-  category: string[];
-}
-
-export const VIDEO_EDUCATION: IVideoEducation[] = [
+export const VIDEO_EDUCATION: VideoEducation[] = [
   {
     id: 1,
     name: "Pengelolaan Keuangan",

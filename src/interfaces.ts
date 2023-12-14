@@ -11,13 +11,18 @@ export interface Quotes {
   sub: string;
 }
 
-export interface VidEducation {
+export interface VideoEducation {
   id: number;
-  tittle: string;
+  name: string;
+  data: VideoData[];
+}
+
+export interface VideoData {
+  id: number;
+  title: string;
   src: string;
-  manag: string;
-  keu: string;
-  subFooter: string;
+  duration: string;
+  category: string[];
 }
 
 export interface VideoSection {

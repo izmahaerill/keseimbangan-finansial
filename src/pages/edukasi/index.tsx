@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout/Layout";
-import { IVideoData, VIDEO_EDUCATION } from "@/constatants";
+import { VIDEO_EDUCATION } from "@/constatants";
+import { VideoData } from "@/interfaces";
 import {
   Card,
   CardBody,
@@ -17,7 +18,7 @@ export default function Edukasi() {
 
   const router = useRouter();
 
-  const filteredData: IVideoData[] = selectedCategory
+  const filteredData: VideoData[] = selectedCategory
     ? VIDEO_EDUCATION.find((item) => item.name === selectedCategory)?.data || []
     : [];
 
