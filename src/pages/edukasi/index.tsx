@@ -1,36 +1,91 @@
 import Layout from "@/components/Layout/Layout";
-import SideBar from "@/components/SideBar";
-import VideoSec from "@/components/VideoSec";
-import { VIDEDUCATION } from "@/constatants";
-import { Typography } from "@material-tailwind/react";
+import { IVideoData, VIDEO_EDUCATION } from "@/constatants";
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  List,
+  ListItem,
+  Typography,
+} from "@material-tailwind/react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function Edukasi() {
-  const data = VIDEDUCATION.map((item) => item.name);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const handleChange = () => {
-    //
-  };
+  const router = useRouter();
+
+  const filteredData: IVideoData[] = selectedCategory
+    ? VIDEO_EDUCATION.find((item) => item.name === selectedCategory)?.data || []
+    : [];
+
+  useEffect(() => {
+    setSelectedCategory(
+      VIDEO_EDUCATION.length > 0 ? VIDEO_EDUCATION[0].name : null
+    );
+  }, []);
 
   return (
     <Layout>
-      <div>
-        <div className="ml-14">
-          <Typography variant="h2">
-            Ingin menambah pengetahuan tentang keuangan?
-          </Typography>
-          <Typography className="font-normal text-gray-600">
-            Yuk, pahami berbagai strategi keuangan untuk menuju finansial yang
-            lebih baik
-          </Typography>
-        </div>
-        <div className="mx-14">
-          <div className="flex justify-center items-start mt-20 gap-3">
-            <div className="">
-              <SideBar name={data} handleChange={handleChange} />
-            </div>
-            <div className="">
-              <VideoSec name={data} />
-            </div>
+      <div className="mt-32 container mx-auto">
+        <Typography variant="h2">
+          Ingin menambah pengetahuan tentang keuangan?
+        </Typography>
+        <Typography variant="paragraph" color="gray" className="mb-10">
+          Yuk, pahami berbagai strategi keuangan untuk menuju finansial yang
+          lebih baik
+        </Typography>
+        <div className="flex gap-5">
+          <div>
+            <Typography variant="h3" className="mb-5">
+              Kategori
+            </Typography>
+            <Card className="w-72">
+              <List>
+                {VIDEO_EDUCATION.map(({ id, name }) => (
+                  <ListItem key={id} onClick={() => setSelectedCategory(name)}>
+                    <Typography variant="paragraph">{name}</Typography>
+                  </ListItem>
+                ))}
+              </List>
+            </Card>
+          </div>
+          <div className="grid grid-cols-3 gap-5">
+            {filteredData.map(({ id, title, src, duration, category }) => (
+              <Card
+                key={id}
+                onClick={() => router.replace(`/edukasi/${id}`)}
+                className="cursor-pointer"
+              >
+                <CardHeader floated={false}>
+                  <iframe src={src} title={title} allowFullScreen />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" color="blue-gray">
+                    {title}
+                  </Typography>
+                </CardBody>
+                <CardFooter>
+                  <div className="flex gap-2 mb-5">
+                    {category.map((name, index) => (
+                      <Typography
+                        key={index}
+                        variant="small"
+                        color="black"
+                        className={`${
+                          index % 2 ? "bg-yellow-100" : "bg-purple-100"
+                        } px-2 py-1 rounded-full`}
+                      >
+                        {name}
+                      </Typography>
+                    ))}
+                  </div>
+                  <Typography variant="paragraph">{duration}</Typography>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
