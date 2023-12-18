@@ -30,7 +30,7 @@ export default function Edukasi() {
 
   return (
     <Layout>
-      <div className="mt-32 container mx-auto">
+      <div className="mt-36 container mx-14">
         <Typography variant="h2">
           Ingin menambah pengetahuan tentang keuangan?
         </Typography>
@@ -38,12 +38,12 @@ export default function Edukasi() {
           Yuk, pahami berbagai strategi keuangan untuk menuju finansial yang
           lebih baik
         </Typography>
-        <div className="flex gap-5">
+        <div className="flex gap-6 mt-16">
           <div>
             <Typography variant="h3" className="mb-5">
               Kategori
             </Typography>
-            <Card className="w-72">
+            <Card className="w-56">
               <List>
                 {VIDEO_EDUCATION.map(({ id, name }) => (
                   <ListItem key={id} onClick={() => setSelectedCategory(name)}>
@@ -58,10 +58,15 @@ export default function Edukasi() {
               <Card
                 key={id}
                 onClick={() => router.replace(`/edukasi/${id}`)}
-                className="cursor-pointer"
+                className="cursor-pointer shadow-lg w-[19rem]"
               >
                 <CardHeader floated={false}>
-                  <iframe src={src} title={title} allowFullScreen />
+                  <iframe
+                    src={src}
+                    title={title}
+                    allowFullScreen
+                    className=" w-full"
+                  />
                 </CardHeader>
                 <CardBody>
                   <Typography variant="h5" color="blue-gray">
