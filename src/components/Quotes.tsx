@@ -15,7 +15,7 @@ export default function Quotes() {
       <Typography variant="h3" className="flex justify-center mb-10 mt-28">
         Quotes Of The Day
       </Typography>
-      <div className="flex gap-11 justify-center h-[376px] ">
+      <div className="flex gap-11 justify-center h-[376px] sm:overflow-x-scroll sm:snap-always ">
         {QUOTES.map(({ tittle, sub }, index) => (
           <div
             key={tittle}

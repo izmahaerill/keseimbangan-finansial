@@ -17,15 +17,27 @@ export default function HeroSection() {
     <>
       <div className="flex justify-between mt-32 ">
         <div>
-          <Image src={Rectangle1} alt="" priority className="top-96"></Image>
+          <Image
+            src={Rectangle1}
+            alt=""
+            priority
+            className="top-96 lg:w-auto sm:hidden"
+          ></Image>
         </div>
         <div className="flex justify-center items-center mt-5 ">
           <div className="flex flex-col items-center justify-center  ">
-            <Image src={heroImage} alt="" width={0} height={0} priority />
+            <Image
+              src={heroImage}
+              alt=""
+              width={0}
+              height={0}
+              priority
+              className="sm:w-[205rem] lg:w-auto"
+            />
             <Link href="/auth/signup">
               <Button
                 size="lg"
-                className="mt-10 w-[290px] h-[65px] rounded-xl text-xl p-0 bg-primary capitalize"
+                className="lg:mt-10 sm:mt-5 lg:w-[290px] lg:h-[65px] sm:w-[100px] sm:h-[30px] lg:rounded-xl sm:rounded-sm lg:text-2xl sm:text-xs p-0 bg-primary capitalize"
               >
                 Let's Join
               </Button>
@@ -33,37 +45,58 @@ export default function HeroSection() {
           </div>
         </div>
         <div>
-          <Image src={Rectangle2} priority alt="" className="mt-40 "></Image>
+          <Image
+            src={Rectangle2}
+            priority
+            alt=""
+            className="mt-40 lg:w-auto sm:hidden"
+          ></Image>
         </div>
       </div>
-      <div className="flex justify-center mt-20 mb-28">
-        <Image src={RectangleHouse} alt="" className="absolute"></Image>
-        <Image src={imageHouse} alt="" className="absolute -mt-2 ml-5"></Image>
-        <div className="">
-          <Image src={Line} alt="" className="absolute -z-40 -ml-36"></Image>
-          <Image src={Line2} alt="" className="ml-36 z-30"></Image>
+      <div className="flex justify-center lg:mt-20 lg:mb-28 sm:mt-10 sm:mb-10">
+        <Image
+          src={RectangleHouse}
+          alt=""
+          className="absolute lg:max-w-max sm:w-1/2"
+        ></Image>
+        <Image
+          src={imageHouse}
+          alt="house image"
+          className="absolute lg:-mt-[12px] sm:-mt-[10px] lg:ml-5 sm:ml-2 lg:w-[40.7rem] sm:w-[21.7rem]"
+        ></Image>
+        <div className="sm:mt-8 lg:mt-auto">
+          <Image
+            src={Line}
+            alt="line"
+            className="absolute -z-40 lg:mt-auto lg:-ml-36 sm:-ml-2 sm:w-[35rem] lg:w-auto"
+          ></Image>
+          <Image
+            src={Line2}
+            alt="line"
+            className="lg:ml-36 sm:ml-16 z-30 sm:w-[35rem] lg:w-auto"
+          ></Image>
         </div>
       </div>
       <div>
         <Image
           src={bulet1}
           alt=""
-          className="absolute ml-[65rem] -mt-[45rem]"
+          className="absolute lg:ml-[65rem] lg:-mt-[45rem] sm:ml-[33rem] sm:-mt-[20rem] sm:w-10 lg:w-auto"
         ></Image>
         <Image
           src={bulet3}
           alt=""
-          className="absolute -mt-[27rem] ml-14 rotate-[5deg] -z-10"
+          className="absolute lg:-mt-[27rem] lg:ml-14 sm:-mt-[9.5rem] sm:ml-11 lg:rotate-[8deg] sm:rotate-[-6deg] -z-10 lg:w-auto sm:w-32"
         ></Image>
         <Image
           src={buletKuning}
           alt=""
-          className="absolute -mt-[46rem] ml-20 "
+          className="absolute lg:-mt-[46rem] lg:ml-20 sm:-mt-[21rem] sm:ml-9 sm:w-16 lg:w-auto"
         ></Image>
         <Image
           src={bulet1}
           alt=""
-          className="absolute -mt-[20.5rem] ml-[70rem] w-16 h-16-z-10"
+          className="absolute lg:-mt-[20.5rem] lg:ml-[70rem] sm:-mt-[7.3rem] sm:ml-[34rem] lg:w-16 lg:h-16 sm:w-7 sm:h-7 -z-10"
         ></Image>
       </div>
     </>

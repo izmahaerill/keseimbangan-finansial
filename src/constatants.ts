@@ -52,7 +52,7 @@ export const QUOTES: Quotes[] = [
 export const VIDEOSECTION: VideoSection[] = [
   {
     id: 1,
-    tittle: "Bijak Mengelola Keuangan",
+    tittle: "Bijak Mengelola Keuangan dengan seni",
     manag: "Management",
     keu: "Keuangan",
     subFooter: "2 Menit 30 Detik",

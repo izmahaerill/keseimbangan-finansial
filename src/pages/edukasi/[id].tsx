@@ -30,7 +30,7 @@ export default function Article() {
 
   return (
     <Layout>
-      <section className="container mx-auto mt-32">
+      <section className="container mx-14 mt-32 max-w-[75rem]">
         <Typography variant="h5">Artikel</Typography>
         <Typography variant="h2">{detailEducation?.title}</Typography>
         <Typography variant="h6" color="gray">
@@ -40,7 +40,7 @@ export default function Article() {
           src={detailEducation?.src}
           title={detailEducation?.title}
           allowFullScreen
-          className="my-10 h-[40rem] w-full rounded-md"
+          className="my-10 h-[38rem] w-full rounded-md mt-14"
         />
         <article className="flex flex-col gap-7">
           <Typography variant="paragraph">

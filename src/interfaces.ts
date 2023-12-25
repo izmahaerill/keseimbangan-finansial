@@ -64,3 +64,19 @@ export interface data {
   userGain: number;
   userLost: number;
 }
+
+export type ManagemenType = {
+  id: string;
+  namaPengeluaran: string;
+  kategori: string;
+  waktuTransaksi: Date;
+  jumlahPengeluaran: number;
+};
+
+export type PengingatType = {
+  id: string;
+  namaPengeluaran: string;
+  kategori: string;
+  waktuDiingatkan: string;
+  jumlahPengeluaran: number;
+};

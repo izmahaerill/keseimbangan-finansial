@@ -20,7 +20,9 @@ export default function RemainderId() {
 
   return (
     <>
-      <HeroImage />
+      <div className="mt-[10rem]">
+        <HeroImage />
+      </div>
       <div className="flex justify-center rounded-2xl ">
         <Card className="bg-gray-300">
           <div className="flex flex-col gap-5 justify-center items-center">

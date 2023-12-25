@@ -1,8 +1,10 @@
 import Tittle from "@/components/Tittle";
 import { TABLE_ROWS } from "@/constatants";
+import { PengingatType } from "@/interfaces";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
-import Link from "next/link";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const TABLE_HEAD = [
   "No",
@@ -13,6 +15,21 @@ const TABLE_HEAD = [
 ];
 
 export default function PengingatSection() {
+  const [dataPengingat, setDataPengingat] = useState<PengingatType[]>([]);
+
+  const handleGetData = async () => {
+    try {
+      const { data } = await axios.get("http://localhost:3000/api/pengingat");
+      setDataPengingat(data);
+    } catch (error: any) {
+      console.log(error.response.data.message);
+    }
+  };
+
+  useEffect(() => {
+    handleGetData();
+  }, []);
+
   return (
     <div>
       <Card className="rounded-lg shadow-2xl ">
@@ -27,7 +44,7 @@ export default function PengingatSection() {
         <div className="flex gap-[25rem] px-12 ">
           <Button
             size="sm"
-            className="bg-secondary flex justify-center items-center gap-4 capitalize"
+            className="bg-secondary flex justify-center items-center text-anjirr gap-4 capitalize"
           >
             Filter
             {
@@ -72,8 +89,17 @@ export default function PengingatSection() {
               </tr>
             </thead>
             <tbody>
-              {TABLE_ROWS.map(
-                ({ id, pengeluaran, kategori, date, spending }, index) => {
+              {dataPengingat.map(
+                (
+                  {
+                    id,
+                    jumlahPengeluaran,
+                    namaPengeluaran,
+                    kategori,
+                    waktuDiingatkan,
+                  },
+                  index
+                ) => {
                   const isLast = index === TABLE_ROWS.length - 1;
                   const classes = isLast
                     ? "p-4  "
@@ -87,7 +113,7 @@ export default function PengingatSection() {
                           color="blue-gray"
                           className="font-normal flex justify-center"
                         >
-                          {id}
+                          {index + 1}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -96,7 +122,7 @@ export default function PengingatSection() {
                           color="blue-gray"
                           className="font-normal flex justify-center"
                         >
-                          {pengeluaran}
+                          {namaPengeluaran}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -114,7 +140,7 @@ export default function PengingatSection() {
                           color="blue-gray"
                           className="font-normal flex justify-center"
                         >
-                          {date}
+                          {new Date(waktuDiingatkan).toDateString()}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -123,7 +149,7 @@ export default function PengingatSection() {
                           color="blue-gray"
                           className="font-normal flex justify-center border-none"
                         >
-                          {spending}
+                          {jumlahPengeluaran}
                         </Typography>
                       </td>
                     </tr>
@@ -132,13 +158,8 @@ export default function PengingatSection() {
               )}
             </tbody>
           </table>
-          <div className="flex justify-end gap-5 mb-20 mr-12 ">
-            <Link href="/managemen/Grafik">
-              <Button className="bg-secondary text-black">Lihat Data</Button>
-            </Link>
-            <Link href="#buttons-with-link">
-              <Button className="bg-secondary text-black">Simpan</Button>
-            </Link>
+          <div className="flex justify-end mb-20 mr-12 ">
+            <Button className="bg-secondary text-black">Edit</Button>
           </div>
         </Card>
 

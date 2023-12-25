@@ -1,8 +1,6 @@
 import Tittle from "@/components/Tittle";
 import Elips from "@/img/Ellipse 859.png";
 import img from "@/img/Group.png";
-import { FormEvent } from "react";
-
 import {
   Button,
   Card,
@@ -14,6 +12,7 @@ import {
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import React, { FormEvent, useState } from "react";
 
 export default function FormDetailPenegeluaran() {
   const handleSubmitManagemen = async (e: FormEvent) => {
@@ -22,11 +21,24 @@ export default function FormDetailPenegeluaran() {
     const formData = new FormData(formElement);
     const formDataJSON = Object.fromEntries(formData.entries());
     const dateTransaksi = new Date(formDataJSON.waktuTransaksi as string);
-    await axios.post("http://localhost:3000/api/managemen", {
+    const dataReq = {
       ...formDataJSON,
       waktuTransaksi: dateTransaksi,
-    });
+      kategori: category,
+    };
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/managemen",
+        dataReq
+      );
+
+      console.log(data.message);
+    } catch (e: any) {
+      console.log(e.response.data.message);
+    }
   };
+
+  const [category, setCategory] = useState("kebutuhan pokok");
 
   return (
     <div>
@@ -72,8 +84,22 @@ export default function FormDetailPenegeluaran() {
                   Kategori
                 </Typography>
                 <div>
-                  <Select name="kategori" label="select">
-                    <Option value="1">kebutuhan pokok</Option>
+                  <Select
+                    name="kategori"
+                    label="select"
+                    selected={(element) => {
+                      setCategory(element?.props.children);
+                      return (
+                        element &&
+                        React.cloneElement(element, {
+                          disabled: true,
+                          className:
+                            "flex items-center opacity-100 px-0 gap-2 pointer-events-none",
+                        })
+                      );
+                    }}
+                  >
+                    <Option>kebutuhan pokok</Option>
                     <Option>kebutuhan sekunder</Option>
                     <Option>kebutuhan tersier</Option>
                   </Select>

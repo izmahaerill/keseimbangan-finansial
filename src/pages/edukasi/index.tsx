@@ -43,7 +43,7 @@ export default function Edukasi() {
             <Typography variant="h3" className="mb-5">
               Kategori
             </Typography>
-            <Card className="w-56">
+            <Card className="w-56 overflow-hidden">
               <List>
                 {VIDEO_EDUCATION.map(({ id, name }) => (
                   <ListItem key={id} onClick={() => setSelectedCategory(name)}>

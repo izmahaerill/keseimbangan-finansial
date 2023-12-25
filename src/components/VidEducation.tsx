@@ -28,54 +28,49 @@ export default function VidEducation() {
           mencapai keseimbangan finansial yang lebih baik
         </Typography>
       </div>
-      <div className="flex justify-center gap-2">
-        <div className="flex justify-center gap-5">
-          {VIDEOSECTION.map(
-            ({ id, src, tittle, manag, keu, subFooter }, index) => (
-              <div key={id}>
-                <Card
-                  onClick={() => router.replace("/edukasi/" + id)}
-                  className="mt-6 w-96 cursor-pointer"
-                >
-                  <CardHeader color="blue-gray" className="relative h-56">
-                    {/* <img src={image} alt="card-image" /> */}
-                    <iframe
-                      className="w-full  h-full"
-                      width="560"
-                      height="315"
-                      src={src}
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </CardHeader>
-                  <CardBody>
-                    <Typography variant="h5" className="mb-2 text-anjirr">
-                      {tittle}
-                    </Typography>
-                  </CardBody>
-                  <div className="flex gap-2 mb-5 ml-7">
-                    <Typography
-                      variant="paragraph"
-                      className="text-purple-900 bg-purple-100 px-6 py-1 text-lg rounded-full"
-                    >
-                      {manag}
-                    </Typography>
-                    <Typography
-                      variant="paragraph"
-                      className="text-yellow-900 bg-yellow-200 px-6 py-1 text-lg rounded-full"
-                    >
-                      {keu}
-                    </Typography>
-                  </div>
-                  <CardFooter className="pt-0">
-                    <Typography>{subFooter}</Typography>
-                  </CardFooter>
-                </Card>
-              </div>
-            )
-          )}
+      <div className="flex justify-center gap-2 lg:flex-row">
+        <div className="flex justify-center gap-5 ">
+          {VIDEOSECTION.map(({ id, src, tittle, manag, keu, subFooter }) => (
+            <div key={id}>
+              <Card
+                onClick={() => router.replace("/edukasi/" + id)}
+                className="mt-6 w-96 cursor-pointer shadow-lg"
+              >
+                <CardHeader color="blue-gray" className="h-56">
+                  <iframe
+                    className="w-full h-full"
+                    width="560"
+                    height="215"
+                    src={src}
+                    title="YouTube video player"
+                    allowFullScreen
+                  ></iframe>
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="h5" className="mb-2 text-anjirr">
+                    {tittle}
+                  </Typography>
+                </CardBody>
+                <div className="flex gap-2 mb-5 ml-7">
+                  <Typography
+                    variant="paragraph"
+                    className="text-purple-900 bg-purple-100 px-6 py-1 text-lg rounded-full"
+                  >
+                    {manag}
+                  </Typography>
+                  <Typography
+                    variant="paragraph"
+                    className="text-yellow-900 bg-yellow-200 px-6 py-1 text-lg rounded-full"
+                  >
+                    {keu}
+                  </Typography>
+                </div>
+                <CardFooter className="pt-0">
+                  <Typography>{subFooter}</Typography>
+                </CardFooter>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     </>

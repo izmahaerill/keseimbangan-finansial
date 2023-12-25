@@ -10,16 +10,19 @@ export default function Footer() {
 
   return (
     <div>
-      <div className="mt-[65rem]">
+      <div className="mt-[65rem] sm:mx-7">
         <footer className="relative mt-[100px]">
-          <div className="flex justify-around items-center">
+          <div
+            className="flex justify-around items-center sm:flex-col sm:items-start sm:gap-5 0 lg:flex-row lg:-mx-14 border-b-2 lg:pb-10 sm:pb-5
+          "
+          >
             <div>
               <Link href="/">
                 <Image src={img} width={163} height={43} alt="" />
               </Link>
             </div>
             <div>
-              <List className="flex flex-row justify-between items-center gap-10">
+              <List className="flex flex-row justify-between items-center gap-10 sm:flex-col sm:items-start sm:-ml-2 sm:gap-2 lg:flex-row lg:gap-10">
                 <Link href="/managemen">
                   <Typography className="hover:text-primary text-anjirr">
                     Managemen Keuangan
@@ -52,11 +55,11 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex justify-between mx-20 mb-10 mt-10 text-anjirr">
+          <div className="flex justify-between lg:my-10 sm:my-5 text-anjirr sm:mx-0 lg:mx-8">
             <Typography variant="paragraph">
               &copy; {currentYear} My Finance. All Rights Reserved.
             </Typography>
-            <div className="flex gap-10">
+            <div className="flex gap-10 sm:gap-5">
               <Typography>Privacy Policy</Typography>
               <Typography>Terms & Conditions</Typography>
             </div>

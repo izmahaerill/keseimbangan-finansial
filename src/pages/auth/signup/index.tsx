@@ -17,7 +17,7 @@ export default function SignUp() {
     const formDataJSON = Object.fromEntries(formData.entries());
     console.log(formDataJSON);
     await axios.post("http://localhost:3000/api/register", formDataJSON);
-    router.push("/");
+    router.push("../auth/signin");
   }
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
