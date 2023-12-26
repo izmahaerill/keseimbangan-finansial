@@ -1,6 +1,7 @@
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -17,6 +18,7 @@ const authOptions: NextAuthOptions = {
         },
         password: { label: "Password", type: "password" },
       },
+
       async authorize(credentials: any) {
         const { email, password } = credentials as {
           email: string;
@@ -28,11 +30,16 @@ const authOptions: NextAuthOptions = {
           password: password,
         };
         if (user) {
+          console.log(user);
           return user;
         } else {
           return null;
         }
       },
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_OAUTH_CLIENT_ID || "",
+      clientSecret: process.env.GOOGLE_OAUTH_CLIENT_SECRET || "",
     }),
   ],
 
@@ -41,6 +48,14 @@ const authOptions: NextAuthOptions = {
       if (account?.provider === "credentials") {
         token.email = user.email;
       }
+      if (account?.provider === "google") {
+        const data = {
+          email: user.email,
+          image: user.image,
+          type: "google",
+        };
+      }
+      console.log({ token, account, user });
       return token;
     },
 
@@ -48,6 +63,7 @@ const authOptions: NextAuthOptions = {
       if ("email" in token) {
         session.user.email = token.email;
       }
+      console.log(session, token);
       return session;
     },
   },

@@ -3,12 +3,15 @@ import Illustration from "@/img/Illustration.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
 import axios from "axios";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FormEvent } from "react";
 
 export default function Login() {
+  const { data } = useSession();
+  console.log(data);
   const router = useRouter();
 
   async function handleFormSubmit(e: FormEvent) {
@@ -25,6 +28,9 @@ export default function Login() {
 
     console.log(response.data);
   }
+
+  const { push, query } = useRouter();
+  const callbackUrl: any = query.callbackUrl || "/";
 
   return (
     <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full ">
@@ -143,6 +149,7 @@ export default function Login() {
           <span className="h-0.5 bg-black w-full" />
         </div>
         <Button
+          onClick={() => signIn("google")}
           size="lg"
           fullWidth
           className="bg-secondary flex items-center gap-2 justify-center text-black normal-case"

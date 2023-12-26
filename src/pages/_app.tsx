@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import { ThemeProvider } from "@material-tailwind/react";
+import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 
 export default function App({
@@ -7,8 +8,10 @@ export default function App({
   pageProps: { session, ...pageProps },
 }: AppProps) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
