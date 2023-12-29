@@ -2,40 +2,42 @@ import Layout from "@/components/Layout/Layout";
 import images from "@/img/profile.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function SignUp() {
+  const { data: session } = useSession();
+
   return (
     <Layout>
-      <div className="ml-14">
+      <div className="ml-14 mt-36">
         <Typography
-          variant="h2"
           color="blue-gray"
-          className="font-bold drop-shadow-lg shadow-black text-anjirr"
+          className="font-bold text-3xl drop-shadow-lg shadow-black text-anjirr"
         >
-          Selamat siang, Obi
+          Selamat siang, {session?.user?.name}
         </Typography>
         <Typography
           variant="h4"
           color="gray"
           className="font-normal text-anjirr drop-shadow-lg shadow-black"
         >
-          Atur profil akun myfinance di sini
+          Atur profil akun MyFinance di sini...
         </Typography>
       </div>
       <Link href={""}>
-        <div className="flex justify-center">
-          <Image src={images} alt=""></Image>
-          <div className="flex bg-primary items-center justify-center w-10 h-10 rounded-full absolute mt-28 ml-28 ">
-            <Icon
-              icon="system-uicons:write"
-              className="text-xl text-white w-7 h-7  "
-            />
-          </div>
+        <div className="flex justify-center my-5">
+          <Image
+            src={session?.user?.image || images}
+            alt=""
+            width={120}
+            height={500}
+            className="rounded-full"
+          />
         </div>
       </Link>
-      <section className="container mx-auto flex my-10 items-center justify-center gap-1 max-h-full">
+      <section className="container mx-auto flex my-5 items-center justify-center gap-1 max-h-full">
         <div className="w-1/2 flex flex-col items-center gap-5 px-10">
           <form
             className="flex flex-col gap-5 w-full"
@@ -93,12 +95,6 @@ export default function SignUp() {
                   name="password"
                   placeholder="Password"
                   className="!border-t-blue-gray-200 focus:!border-t-gray-900  w-[328px]"
-                  icon={
-                    <Icon
-                      icon="material-symbols:password-rounded"
-                      className="text-xl text-gray-900"
-                    />
-                  }
                   crossOrigin={undefined}
                 />
               </div>
@@ -108,13 +104,13 @@ export default function SignUp() {
                   size="lg"
                   className="bg-secondary normal-case px-3 font-normal text-anjirr py-3"
                 >
-                  Simpan
+                  Batal
                 </Button>
                 <Button
                   size="lg"
-                  className=" bg-primary px-3 font-normal normal-case py-3"
+                  className="bg-primary px-3 font-normal normal-case py-3"
                 >
-                  Ubah Kata Sandi
+                  Simpan
                 </Button>
               </div>
             </div>

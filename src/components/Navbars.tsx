@@ -164,15 +164,26 @@ const Navbar: React.FC<NavbarProps> = () => {
               handler={setIsMenuOpen}
               placement="bottom-end"
             >
-              <MenuHandler>
-                <Avatar
-                  src={session.user?.image as string}
-                  alt="Profile"
-                  withBorder={true}
-                  className="p-0.5 cursor-pointer"
-                />
-              </MenuHandler>
+              <div className="flex items-center gap-2">
+                <MenuHandler>
+                  <Avatar
+                    src={session.user?.image as string}
+                    alt="Profile"
+                    withBorder={true}
+                    className="p-0.5 cursor-pointer"
+                  />
+                </MenuHandler>
+                <Typography
+                  color="blue-gray"
+                  className="font-bold text-md drop-shadow-lg shadow-black text-anjirr"
+                >
+                  {session?.user?.name}
+                </Typography>
+              </div>
               <MenuList className="p-1">
+                <Link href="/profile">
+                  <MenuItem>Profile</MenuItem>
+                </Link>
                 <MenuItem
                   onClick={() => signOut()}
                   className="flex items-center gap-2 text-red-500"
