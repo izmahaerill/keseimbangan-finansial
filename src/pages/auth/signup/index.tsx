@@ -3,6 +3,7 @@ import Illustration from "@/img/Illustration.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Input, Typography } from "@material-tailwind/react";
 import axios from "axios";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -169,6 +170,7 @@ export default function SignUp() {
         <Button
           size="lg"
           fullWidth
+          onClick={() => signIn("google", { callbackUrl: "/" })}
           className="bg-secondary flex items-center gap-2 justify-center text-black normal-case"
         >
           <Icon icon="logos:google-icon" className="text-xl" />

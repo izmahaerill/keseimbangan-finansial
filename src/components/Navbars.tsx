@@ -1,5 +1,15 @@
 import img from "@/img/Frame 112.png";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { Icon } from "@iconify/react";
+import {
+  Avatar,
+  Menu,
+  MenuHandler,
+  MenuItem,
+  MenuList,
+  Typography,
+} from "@material-tailwind/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -9,6 +19,9 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   const [eduDropdownOpen, setEduDropdownOpen] = useState(false);
   const [calcDropdownOpen, setCalcDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { data: session } = useSession();
 
   let eduTimeout: NodeJS.Timeout | null = null;
   let calcTimeout: NodeJS.Timeout | null = null;
@@ -144,21 +157,47 @@ const Navbar: React.FC<NavbarProps> = () => {
               )}
             </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <Link href="/auth/signin">
-              <button
-                // onClick={() => signIn()}
-                className="text-anjirr px-4 py-2 rounded bg-secondary hover:bg-yellow-700 transition duration-150 ease-out hover:ease-in"
-              >
-                Login
-              </button>
-            </Link>
-            <Link href="/auth/signup">
-              <button className="text-anjirr outline outline-1 rounded outline-secondary p-2 hover:bg-secondary transition duration-200 ease-out hover:ease-in">
-                Sign Up
-              </button>
-            </Link>
-          </div>
+          {/* TODO: handle login with credentials */}
+          {session ? (
+            <Menu
+              open={isMenuOpen}
+              handler={setIsMenuOpen}
+              placement="bottom-end"
+            >
+              <MenuHandler>
+                <Avatar
+                  src={session.user?.image as string}
+                  alt="Profile"
+                  withBorder={true}
+                  className="p-0.5 cursor-pointer"
+                />
+              </MenuHandler>
+              <MenuList className="p-1">
+                <MenuItem
+                  onClick={() => signOut()}
+                  className="flex items-center gap-2 text-red-500"
+                >
+                  <Icon icon="tabler:logout" className="text-lg" />
+                  <Typography variant="paragraph" className="font-medium">
+                    Sign Out
+                  </Typography>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          ) : (
+            <div className="flex items-center space-x-4">
+              <Link href="/auth/signin">
+                <button className="text-anjirr px-4 py-2 rounded bg-secondary hover:bg-yellow-700 transition duration-150 ease-out hover:ease-in">
+                  Login
+                </button>
+              </Link>
+              <Link href="/auth/signup">
+                <button className="text-anjirr outline outline-1 rounded outline-secondary p-2 hover:bg-secondary transition duration-200 ease-out hover:ease-in">
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
     </>
